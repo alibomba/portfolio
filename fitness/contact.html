@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="css/generic.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="contact.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="homepage"><img class="header__logo" src="img/logo.svg" alt="logo"></a>
+        <nav class="header__nav">
+            <a class="header__nav-link" href="homepage">Strona główna</a>
+            <a class="header__nav-link" href="abonamenty">Abonamenty</a>
+            <a class="header__nav-link" href="BMI">BMI</a>
+            <a class="header__nav-link header__nav-link--active" href="kontakt">Kontakt</a>
+        </nav>
+    </header>
+    <main>
+        <form class="kontakt">
+            <div class="column">
+                <label for="temat">Temat:</label>
+                <input type="text" class="input-orange" id="temat">
+            </div>
+            <div class="column">
+                <label for="email">Adres e-mail:</label>
+                <input type="text" class="input-orange" id="email">
+            </div>
+            <div class="column">
+                <label for="tresc">Treść:</label>
+                <textarea class="input-orange" id="tresc" cols="25" rows="5"></textarea>
+            </div>
+            <input type="submit" value="Wyślij" class="kontakt__button">
+        </form>
+        <div class="main__bottom">
+            <iframe class="bottom__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d549.8238674184088!2d19.21761342382406!3d49.88254414050656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47169a2013571e51%3A0x300ed176971ce2b7!2sFUNKY%20FIT%20GYM%20%26%20FITNESS!5e1!3m2!1spl!2spl!4v1666942595411!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="bottom__godziny column">
+                <p class="godziny__heading">Godziny otwarcia</p>
+                <p class="godziny__text">
+                    Pn - Sob 05:00-23:00<br>
+                    Niedziela 10:00-17:00
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer class="footer__bottom">
+        <a href="homepage"><img src="img/logo-black.png" alt="black logo" class="footer__logo"></a>
+        <form class="footer__bottom__cta">
+            <input placeholder="Newsletter" type="text" id="newsletter" class="footer__bottom__input">
+            <input type="submit" value="Wyślij" class="footer__button">
+        </form>
+    </footer>
+</body>
+</html>

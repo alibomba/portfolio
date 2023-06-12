@@ -1,0 +1,73 @@
+h1{
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    padding: 1em 0 0 1em;
+}
+.setting{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    position: relative;
+    width: fit-content;
+}
+.setting__label{
+    font-size: 1.5rem;
+}
+.setting__input{
+    font-size: 1.5rem;
+    width: fit-content;
+    border:3px solid black;
+    padding:.25em;
+    padding-left: .5em;
+}
+.section__grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-content: center;
+    row-gap:30px;
+    column-gap: 30%;
+    transform: translateX(-15%);
+}
+.informacje,.adres,.haslo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+}
+.informacje,.adres{
+    border-bottom: 1px solid black;
+}
+.section__button{
+    background-color: var(--secondary);
+    border: 1px solid black;
+    color:white;
+    font-weight: bold;
+    font-size: 2rem;
+    padding:.25em 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 150ms ease-in-out;
+}
+.section__button:hover{
+    background-color: var(--secondary-hover);
+}
+form{
+    padding: 3em;
+}
+
+.setting__eye{
+    width:45px;
+    position: absolute;
+    right:5px;
+    bottom:0;
+    cursor: pointer;
+}
+.haslo__row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:50px;
+}
+.section__error{
+    font-size: 2rem;
+}

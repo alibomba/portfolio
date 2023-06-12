@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Fitness</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="css/generic.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="galeria.js" defer></script>
+    <script src="cytaty.js" defer></script>
+    <script src="trenerzy.js" defer></script>
+    <script src="newsletter.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="homepage"><img class="header__logo" src="img/logo.svg" alt="logo"></a>
+        <nav class="header__nav">
+            <a class="header__nav-link header__nav-link--active" href="homepage">Strona główna</a>
+            <a class="header__nav-link" href="abonamenty">Abonamenty</a>
+            <a class="header__nav-link" href="BMI">BMI</a>
+            <a class="header__nav-link" href="kontakt">Kontakt</a>
+        </nav>
+    </header>
+    <div class="hero">
+        <h2 class="hero__heading">Karnety i plany<br>treningowe</h2>
+        <p class="hero__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of</p>
+        <div class="hero__buttons">
+            <a href="abonamenty?tab=karnety" class="hero__buttons__karnety">Sprawdź karnety</a>
+            <a href="abonamenty?tab=plany" class="hero__buttons__plany">Zobacz plany</a>
+        </div>
+    </div>
+    <main class="main">
+        <section class="trenerzy">
+            <h2 class="trenerzy__heading">Trenerzy</h2>
+            <div class="trenerzy__slider">
+                <img src="img/icons/arrow-left-icon.svg" alt="left arrow" class="slider__arrow slider__left-arrow">
+                <div class="trenerzy__components">
+
+                    <div class="trenerzy__trener trener--invisible">
+                        <img class="trener__img" src="img/trenerzy/paige_thompson-trainer.jpg" alt="paige thompson">
+                        <div class="trener__bottom">
+                            <div class="trener__orange">
+                                <p class="trener__name">Paige Thompson</p>
+                                <p class="trener__job">Trener</p>
+                                <p class="trener__age">Wiek:23</p>
+                            </div>
+                            <div class="trener__yellow">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"/></svg>
+                                </a>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                </a>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trenerzy__trener trener--inactive">
+                        <img class="trener__img" src="img/trenerzy/andres_ayrton-trainer.jpg" alt="andres ayrton">
+                        <div class="trener__bottom">
+                            <div class="trener__orange">
+                                <p class="trener__name">Andres Ayrton</p>
+                                <p class="trener__job">Trener</p>
+                                <p class="trener__age">Wiek:26</p>
+                            </div>
+                            <div class="trener__yellow">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"/></svg>
+                                </a>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                </a>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="trenerzy__trener">
+                        <img class="trener__img" src="img/trenerzy/alessandro_totaro-trainer.jpg" alt="alessandro totaro">
+                        <div class="trener__bottom">
+                            <div class="trener__orange">
+                                <p class="trener__name">Alessandro Totaro</p>
+                                <p class="trener__job">Trener</p>
+                                <p class="trener__age">Wiek:30</p>
+                            </div>
+                            <div class="trener__yellow">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"/></svg>
+                                </a>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                </a>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="trenerzy__trener trener--inactive">
+                        <img class="trener__img" src="img/trenerzy/andrew_tate-trainer.jpg" alt="andrew tate">
+                        <div class="trener__bottom">
+                            <div class="trener__orange">
+                                <p class="trener__name">Andrew Tate</p>
+                                <p class="trener__job">Trener</p>
+                                <p class="trener__age">Wiek:34</p>
+                            </div>
+                            <div class="trener__yellow">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"/></svg>
+                                </a>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                </a>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="trenerzy__trener trener--invisible">
+                        <img class="trener__img" src="img/trenerzy/peter_smith-trainer.jpg" alt="peter smith">
+                        <div class="trener__bottom">
+                            <div class="trener__orange">
+                                <p class="trener__name">Peter Smith</p>
+                                <p class="trener__job">Trener</p>
+                                <p class="trener__age">Wiek:25</p>
+                            </div>
+                            <div class="trener__yellow">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"/></svg>
+                                </a>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                </a>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="img/icons/arrow-right-icon.svg" alt="right arrow" class="slider__arrow slider__right-arrow">
+            </div>
+        </section>
+        <section class="cytat">
+            <div class="cytat__text">
+                <svg class="cytat__icon" width="100px" height="100px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.16 3.5C4.73 5.06 3.55 6.67 3.55 9.36c.16-.05.3-.05.44-.05 1.27 0 2.5.86 2.5 2.41 0 1.61-1.03 2.61-2.5 2.61-1.9 0-2.99-1.52-2.99-4.25 0-3.8 1.75-6.53 5.02-8.42L7.16 3.5zm7 0c-2.43 1.56-3.61 3.17-3.61 5.86.16-.05.3-.05.44-.05 1.27 0 2.5.86 2.5 2.41 0 1.61-1.03 2.61-2.5 2.61-1.89 0-2.98-1.52-2.98-4.25 0-3.8 1.75-6.53 5.02-8.42l1.14 1.84h-.01z"/></svg>
+            </div>
+            <img class="cytat__guy" src="img/quote-guy.png" alt="a muscled man">
+        </section>
+        <section class="oferta">
+            <h2 class="oferta__heading">Co oferujemy?</h2>
+            <div class="oferta__tiles">
+                <div class="oferta__tile">
+                    <svg class="oferta__tile__icon" width="90px" height="90px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.274 9.86895L16.8325 4.95404L18.4708 3.80688L21.9123 8.7218L20.274 9.86895Z" fill="black"/>
+                        <path d="M18.3901 12.4087L16.6694 9.95133L8.47789 15.6871L10.1986 18.1445L8.56029 19.2917L3.97168 12.7385L5.60998 11.5913L7.33074 14.0488L15.5223 8.31303L13.8015 5.85553L15.4398 4.70837L20.0284 11.2616L18.3901 12.4087Z" fill="black"/>
+                        <path d="M20.7651 7.08343L22.4034 5.93628L21.2563 4.29797L19.618 5.44513L20.7651 7.08343Z" fill="black"/>
+                        <path d="M7.16759 19.0461L3.72613 14.1312L2.08783 15.2783L5.52929 20.1932L7.16759 19.0461Z" fill="black"/>
+                        <path d="M4.38214 18.555L2.74383 19.7021L1.59668 18.0638L3.23498 16.9167L4.38214 18.555Z" fill="black"/>
+                        </svg>                        
+                    <p class="oferta__tile__text">Bodybuilding</p>
+                </div>
+                <div class="oferta__tile">
+                    <svg class="oferta__tile__icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 511.991 511.991" style="enable-background:new 0 0 511.991 511.991;" xml:space="preserve">
+<g>
+	<g>
+		<circle cx="288.319" cy="43.778" r="43.778"/>
+	</g>
+</g>
+<g>
+	<g>
+		<path d="M496.362,166.967c-2.206-9.454-11.657-15.329-21.113-13.125L347.51,183.646c-9.452,2.205-15.331,11.657-13.125,21.113
+			c0.58,2.486,1.666,4.721,3.116,6.631l-59.942-15.406l-24.799-71.251l35.927,53.645l12.998-34.043
+			c5.827-15.26-1.82-32.354-17.081-38.181L233.75,86.689c-5.429-2.078-11.298-2.74-17.053-1.924L133.889,96.51
+			c-6.411,0.913-11.971,4.895-14.898,10.67c-2.927,5.774-2.851,12.614,0.202,18.324l40.788,76.256l-16.349,44.658
+			c-2.4,5.245-2.867,11.384-0.805,17.258l14.824,42.225l-61.845-6.747c-12.685-1.382-24.092,7.777-25.476,20.464
+			c-1.384,12.685,7.778,24.092,20.464,25.476l98.299,10.725c7.874,0.86,15.66-2.376,20.604-8.604
+			c4.934-6.216,6.333-14.53,3.704-22.018l-21.136-60.207l49.208,76.439l-34.863,98.189c-3.334,9.39-0.211,19.482,7.034,25.496
+			H38.603c-12.945,0-23.438,10.494-23.438,23.438s10.494,23.438,23.438,23.438h367.981c12.944,0,23.438-10.494,23.438-23.438
+			s-10.494-23.438-23.438-23.438h-15.4l73.191-272.327c0.029-0.107,0.042-0.214,0.069-0.32l18.791-4.385
+			C492.692,185.875,498.568,176.422,496.362,166.967z M178.723,152.682l-11.174-20.891l20.252-2.883L178.723,152.682z
+			 M342.646,465.113h-99.493c3.095-2.568,5.564-5.97,7.008-10.034l38.635-108.817c2.381-6.707,1.539-14.137-2.284-20.14
+			l-33.905-53.25l7.885-20.65l-7.851-2.018c-17.097-4.395-26.975-19.414-27.995-29.153l-8.444-80.662
+			c29.273,84.107,27.452,78.943,27.828,79.837c2.233,5.32,6.674,9.405,12.161,11.188c0.923,0.299-4.075-1.008,77.948,20.074h0.001
+			c9.522,2.446,19.267-2.453,23.109-11.252c3.34-7.648,1.516-16.293-4.164-21.979c0.802-0.073,1.608-0.185,2.414-0.372
+			c25.814-6.022,31.013-7.236,57.179-13.34L342.646,465.113z"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+                    <p class="oferta__tile__text">Spalanie tłuszczu</p>
+                </div>
+                <div class="oferta__tile">
+                    <svg class="oferta__tile__icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 25.755 25.755" style="enable-background:new 0 0 25.755 25.755;" xml:space="preserve">
+<g>
+	<circle cx="12.642" cy="4.873" r="1.813"/>
+	<path  d="M13.507,0.117c-0.339,0.372,2.762,3.027,2.762,4.938c0,0.956-1.405,2.562-1.786,2.828
+		c-0.233,0.163-0.991,0.134-1.907,0.146c-0.578,0.009-1.713-0.01-1.895-0.192C10.204,7.36,8.97,5.959,8.97,5.254
+		c0-1.487,2.793-4.974,2.359-5.244C10.935-0.237,7.038,4,7.038,5.321c0,2.026,2.721,5.011,2.721,5.011s-0.022,4.092-0.022,4.519
+		c0,3.673,1.281,10.904,2.392,10.904c0.684,0,0.086-3.844,0.086-5.665c0-2.164,0.427-4.328,0.427-4.328s3.407,1.187,3.044,1.561
+		c-0.852,0.877-3.168,1.728-2.868,2.178c0.378,0.566,3.771-0.319,5.788-1.912c0.845-0.667-3.418-3.865-3.418-3.865
+		c0-1.783,0.025-1.825-0.063-3.391c0,0,2.896-3.159,2.896-4.958C18.021,2.879,14.005-0.431,13.507,0.117z"/>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+                    <p class="oferta__tile__text">Joga</p>
+                </div>
+                <div class="oferta__tile">
+                    <svg class="oferta__tile__icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="90px" height="90px" viewBox="0 0 248.914 248.914" style="enable-background:new 0 0 248.914 248.914;"
+	 xml:space="preserve">
+<g>
+	<g>
+		<path d="M201.711,49.583c-5.46,0-9.895,3.771-9.895,8.419c0,4.653,4.435,8.419,9.895,8.419c5.316,0,9.643-3.566,9.876-8.032
+			c5.105-13.6,4.106-24.078,3.043-29.137c-0.747-3.533-4.2-6.295-7.851-6.295l-23.27-0.01c-1.857,0-3.594,0.724-4.9,2.03
+			c-1.382,1.391-2.138,3.276-2.129,5.32c0.038,5.699-1.223,13.306-2.305,18.776c-0.906-0.233-1.877-0.364-2.885-0.364
+			c-5.461,0-9.895,3.771-9.895,8.424c0,4.648,4.438,8.419,9.895,8.419c5.055,0,9.213-3.22,9.819-7.378l0.075,0.019
+			c0.163-0.653,3.826-15.523,4.079-26.453l20.898,0.009c0.668,3.617,1.111,9.983-1.124,18.323
+			C203.988,49.765,202.878,49.583,201.711,49.583z"/>
+		<path d="M35.864,137.832c2.021,4.191,7.649,5.661,12.568,3.295c4.793-2.301,7.141-7.393,5.414-11.519
+			c-1.3-14.472-6.744-23.475-9.896-27.577c-2.208-2.852-6.515-3.851-9.808-2.264l-20.969,10.085
+			c-1.673,0.803-2.926,2.208-3.533,3.958c-0.644,1.849-0.501,3.883,0.392,5.717c2.504,5.12,4.669,12.522,6.06,17.921
+			c-0.921,0.183-1.851,0.485-2.753,0.925c-4.917,2.366-7.273,7.687-5.255,11.877c2.021,4.191,7.645,5.666,12.569,3.295
+			c4.548-2.188,6.9-6.902,5.642-10.906l0.077-0.015c-0.133-0.662-3.288-15.644-7.799-25.608l18.83-9.054
+			c2.17,2.973,5.334,8.513,6.935,16.998c-1.076,0.168-2.156,0.49-3.208,0.994C36.202,128.32,33.846,133.642,35.864,137.832z"/>
+		<circle cx="110.565" cy="38.136" r="21.004"/>
+		<path d="M14.337,232.868h220.239c7.921,0,14.338-6.272,14.338-14.021c0-7.747-6.417-14.024-14.338-14.024h-67.262
+			c0.393-0.145,0.794-0.28,1.176-0.504c3.291-1.993,4.351-6.277,2.357-9.572l-39.278-65.017v-32.11
+			c17.88,16.139,26.523,41.985,26.677,42.457c0.957,2.949,3.692,4.825,6.637,4.825c0.705,0,1.434-0.106,2.138-0.336
+			c3.673-1.181,5.68-5.115,4.494-8.773c-0.588-1.807-12.661-38.261-39.969-55.697c-0.111-9.525-7.852-17.217-17.406-17.217h-7.159
+			c-4.587,0-8.732,1.811-11.843,4.709c-21.464-15.322-31.79-46.194-31.962-46.717c-1.19-3.654-5.108-5.67-8.774-4.485
+			c-3.671,1.185-5.678,5.115-4.492,8.774c0.581,1.801,12.564,37.98,39.642,55.501v55.791L76.045,160.15
+			c-1.104,1.937-1.218,4.279-0.296,6.319l15.681,34.751c0.793,1.76,2.245,2.978,3.918,3.603H14.337
+			C6.419,204.823,0,211.105,0,218.848C0,226.591,6.419,232.868,14.337,232.868z M89.914,163.968l13.301-23.335h18.647l37.047,61.325
+			c0.845,1.396,2.114,2.338,3.528,2.87h-62.156c0.119-0.047,0.248-0.065,0.367-0.117c3.507-1.582,5.075-5.712,3.489-9.222
+			L89.914,163.968z"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+                    <p class="oferta__tile__text">Zumba</p>
+                </div>
+            </div>
+        </section>
+        <section class="app">
+            <h2 class="app__heading">Aplikacja mobilna</h2>
+            <div class="app__content">
+                <div class="app__phone-container">
+                    <div class="app__circle"></div>
+                    <img src="img/smartphone.png" alt="an iphone" class="app__phone">
+                </div>
+                <p class="app__text">Śledź swój progress, przedłużaj karnet, kupuj plany, a to wszystko w Twojej kieszeni i w wygodnej formie.</p>
+            </div>
+            <div class="app__buttons">
+                <a href="#"><img src="img/ios.png" alt="ios app link" class="app__button--ios"></a>
+                <a href="#"><img src="img/android.png" alt="android app link" class="app__button--android"></a>
+            </div>
+        </section>
+        <section class="gallery-section">
+            <h2 class="gallery__heading">Nasza siłownia</h2>
+            <div class="container">
+  
+                <div class="feature">
+                  <figure class="featured-item image-holder r-3-2 transition"></figure>
+                </div>
+                
+                <div class="gallery-wrapper">
+                  <div class="gallery">
+                      <div class="item-wrapper">
+                        <figure class="gallery-item image-holder r-3-2 active transition"></figure>
+                      </div>
+                      <div class="item-wrapper">
+                        <figure class="gallery-item image-holder r-3-2 transition"></figure>
+                      </div>
+                      <div class="item-wrapper">
+                        <figure class="gallery-item image-holder r-3-2 transition"></figure>
+                      </div>
+                      <div class="item-wrapper">
+                        <figure class="gallery-item image-holder r-3-2 transition"></figure>
+                      </div>
+                      <div class="item-wrapper">
+                        <figure class="gallery-item image-holder r-3-2"></figure>
+                      </div>
+                      <div class="item-wrapper">
+                        <figure class="gallery-item image-holder r-3-2 transition"></figure>
+                      </div>
+                      <div class="item-wrapper">
+                        <figure class="gallery-item image-holder r-3-2 transition"></figure>
+                      </div>
+                      <div class="item-wrapper">
+                        <figure class="gallery-item image-holder r-3-2 transition"></figure>
+                      </div>
+                      <div class="item-wrapper">
+                        <figure class="gallery-item image-holder r-3-2 transition"></figure>
+                      </div>
+                      <div class="item-wrapper">
+                        <figure class="gallery-item image-holder r-3-2 transition"></figure>
+                      </div>
+                  </div>
+                </div>
+                
+                <div class="controls">
+                  <button class="move-btn left">&larr;</button>
+                  <button class="move-btn right">&rarr;</button>
+                </div>
+                
+              </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__top__left">
+                <iframe class="footer__top__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d785.8226819971287!2d19.217521400505873!3d49.88246086430826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47169a2013571e51%3A0x300ed176971ce2b7!2sFUNKY%20FIT%20GYM%20%26%20FITNESS!5e1!3m2!1spl!2spl!4v1666192905558!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <a class="footer__button" href="abonamenty?tab=karnety">Karnety</a>
+            </div>
+            <div class="footer__top__right">
+                <p class="footer__top__right__heading">Godziny otwarcia</p>
+                <p class="footer__top__right__text">
+                    Pn - Sob 05:00-23:00<br>Niedziela 10:00-17:00
+                </p>
+            </div>            
+        </div>
+        <div class="footer__bottom">
+            <a href="homepage"><img src="img/logo-black.png" alt="black logo" class="footer__logo"></a>
+            <form class="footer__bottom__cta">
+                <input placeholder="Newsletter" type="text" id="newsletter" class="footer__bottom__input">
+                <input type="submit" value="Wyślij" class="footer__button">
+            </form>
+        </div>
+    </footer>
+    <div class="newsletter-overlay">
+        <div class="newsletter-popup">
+            <div class="popup__left"></div>
+            <div class="popup__right">
+                <div class="popup__header">
+                    <p class="popup__heading">Podaj adres e-mail</p>
+                    <p class="popup__desc">Otrzymuj najnowsze wiadomości z naszej siłowni i od naszej społeczności. Dołącz do newslettera już dziś.</p>
+                </div>
+                <form class="popup__form">
+                    <input type="text" class="popup__input" placeholder="Podaj e-mail">
+                    <input type="submit" value="Zapisz się" class="popup__button">
+                </form>
+            </div>
+            <img class="popup__close" src="img/icons/close-icon.png" alt="close icon">
+        </div>
+    </div>
+</body>
+</html>

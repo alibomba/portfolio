@@ -1,0 +1,94 @@
+.rect{
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap:30px;
+    font-size: 2.5rem;
+    color:var(--black);
+    width: 700px;
+    max-width: 85%;
+    margin:0 auto;
+    padding:1em 2em;
+    margin-top:1em;
+    border-radius: 15px;
+}
+.rect__element{
+    display: flex;
+    align-items: center;
+    gap:15px;
+}
+.rect__element__icon{
+    width:50px;
+}
+.rect__godziny{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem;
+    gap:10px;
+}
+.rect__godziny__godziny{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:5px;
+    color:var(--black-70);
+}
+
+h1{
+    font-size:3rem;
+    margin-top: 2em;
+    text-align: center;
+}
+
+.message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+    font-size: 2.3rem;
+    margin-bottom: 1em;
+}
+.message__element{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+}
+.message__element__label{
+    font-weight: bold;
+}
+.message__element__input,.message__element__textarea{
+    font-size: 2.3rem;
+    background-color: var(--secondary);
+    color:white;
+    border: none;
+    border-radius: 15px;
+    padding: .3em;
+}
+.message__element__textarea{
+    resize: none;
+}
+.message__button{
+    border: none;
+    background-color: var(--thirdary);
+    color:white;
+    font-size: 2rem;
+    font-weight: bold;
+    padding:.3em .9em;
+    margin-top: 1em;
+    border-radius: 15px;
+    cursor: pointer;
+    transition:background-color 150ms ease-in-out;
+}
+.message__button:hover{
+    background-color: var(--thirdary-hover);
+}
+.message__button:active{
+    opacity: .8;
+}
+.message__error{
+    font-size: 1.8rem;
+}

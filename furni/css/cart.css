@@ -1,0 +1,182 @@
+.main{
+    display: flex;
+}
+*,*::before,*::after{
+    user-select: none;
+}
+/* aside */
+.aside{
+    border-right: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    padding:10em 3em 3em 1em;
+}
+.aside-link{
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap:10px;
+    position: relative;
+    width: fit-content;
+}
+.aside-link:hover{
+    opacity: .8;
+}
+.aside-link--active::after{
+    content: '';
+    width:15px;
+    height: 15px;
+    background-color: var(--thirdary);
+    border-radius: 50%;
+    position: absolute;
+    right: -25px;
+}
+.aside-link__icon path{
+    fill:var(--thirdary);
+}
+/* koniec aside */
+
+
+/* produkt */
+.koszyk{
+    margin: 0 auto;
+    padding:2em;
+}
+.koszyk--historia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+}
+.produkty{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    max-height:50vh;
+    overflow-y: scroll;
+    border: 2px solid black;
+    padding:1em;
+}
+.produkty::-webkit-scrollbar{
+    display: none;
+}
+.pozycja{
+    display: flex;
+    align-items: center;
+    gap:30px;
+    border: 3px solid var(--thirdary);
+    padding:1em 2.5em;
+}
+.pozycja__data{
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+.pozycja__checkbox{
+    transform: scale(3);
+    cursor: pointer;
+    accent-color: var(--thirdary);
+}
+.pozycja__img{
+    width:150px;
+    height:150px;
+    object-fit: contain;
+    object-position: center;
+    border: 3px solid var(--secondary);
+}
+.pozycja__nazwa{
+    font-size: 2rem;
+    font-weight: 500;
+}
+.liczby{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+}
+.ilosc{
+    display: flex;
+    align-items: center;
+    gap:5px;
+}
+.ilosc__ilosc{
+    font-size: 1.2rem;
+    border: 1px solid black;
+    padding:.2em;
+}
+.ilosc__icon{
+    width: 35px;
+    cursor: pointer;
+}
+.pozycja__delete{
+    width:50px;
+    margin-left: 4em;
+    cursor: pointer;
+}
+.pozycja__cena{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+/* koniec produktu */
+
+
+/* podsumowanie */
+.podsumowanie{
+    font-size: 1.7rem;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    border: 3px solid var(--secondary);
+    padding: .5em;
+}
+.podsumowanie__heading{
+    margin-bottom: .5em;
+    font-weight: bold;
+}
+.podsumowanie__row{
+    display: flex;
+    align-items: center;
+    gap:5px;
+}
+.kod-promocyjny-input{
+    width:300px;
+    font-size: 1.5rem;
+    border: 3px solid black;
+    padding: .2em;
+}
+.podsumowanie__button{
+    font-size: 1.7rem;
+    background-color: var(--thirdary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding:.2em .75em;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 150ms ease-in-out;
+}
+.podsumowanie__button:hover{
+    background-color: var(--thirdary-hover);
+}
+.podsumowanie__button:active{
+    opacity: .8;
+}
+.calosc{
+    margin-top: .5em;
+}
+.podsumowanie__error{
+    color:red;
+}
+/* koniec podsumowania */
+.brak-produktow-big{
+    background-color: #f63636;
+    color:white;
+    font-size: 4rem;
+    font-weight: bold;
+    width:100%;
+    margin: 0 auto;
+    padding: 1em;
+    margin-block: 2em;
+    text-align: center;
+}

@@ -1,0 +1,42 @@
+.notifications-container{
+    width:100%;
+    max-width: 600px;
+    margin:0 auto;
+    padding:1em;
+    padding-top:2em;
+}
+.notification-element{
+    display:flex;
+    align-items: center;
+    gap:15px;
+    padding-block:2em;
+    border-bottom: 1px solid var(--grayish-text-color);
+}
+.pfp--notification{
+    width:100px;
+    height:100px;
+}
+.notification-element__info{
+    display:flex;
+    flex-direction: column;
+    gap:15px;
+}
+.notification-element__content{
+    font-size: 1.5rem;
+}
+.notification-element__ago{
+    font-size: 1.1rem;
+}
+@media(max-width:950px){
+    .notification-element{
+        flex-direction: column;
+        text-align: center;
+    }
+    .pfp--notification{
+        width:80px;
+        height:80px;
+    }
+    .notification-element__info{
+        align-items: center;
+    }
+}

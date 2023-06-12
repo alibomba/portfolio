@@ -1,0 +1,7 @@
+RewriteEngine on
+
+RewriteRule homepage index.php
+RewriteRule uslugi services.php 
+RewriteRule aplikacja mobile_app.php
+RewriteRule kontakt contact.php
+RewriteRule o-nas about.php

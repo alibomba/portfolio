@@ -1,0 +1,45 @@
+.bmi{
+    font-size: 1.5rem;
+}
+.column,.bmi{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.column{
+    gap:10px;
+}
+.bmi{
+    gap:20px;
+    padding:2.3em 1em;
+}
+.input-orange{
+    background-color: var(--thirdary);
+    border: none;
+    color:white;
+    font-size: 1.5rem;
+    padding:.4em;
+    border-radius: 15px;
+    max-width: 500px;
+    width:100%;
+}
+.bmi__button{
+    border: none;
+    background-color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:white;
+    padding:.5em 1.1em;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 150ms ease-in-out;
+}
+.bmi__button:hover{
+    background-color: #DC430A;
+}
+.bmi__wynik{
+    font-weight: bold;
+}
+.bmi__typ{
+    font-size: 1rem;
+}

@@ -1,0 +1,124 @@
+.background-image{
+    width:100vw;
+    height:100vh;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+    position:fixed;
+    inset:0;
+}
+body{
+    display:grid;
+    font-size: 1.65rem;
+}
+input{
+    font-size: 1.65rem;
+}
+.logo{
+    width:fit-content;
+    margin:0 auto;
+}
+
+.container{
+    margin:0 auto;
+    width:80%;
+    max-width: 400px;
+    margin-top: 3em;
+}
+.input-container{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:5px;
+    position:relative;
+    margin-bottom: 1em;
+}
+
+label{
+    color: #00FF0A;
+    font-weight: bold;
+}
+
+.field{
+    background-color: var(--orange);
+    border:none;
+    padding:.5em;
+    border-radius: 15px;
+    color:white;
+    cursor:pointer;
+    width:100%;
+    transition:background-color 150ms ease-in-out;
+}
+.field:hover,.field:focus{
+    outline:none;
+    background-color: #DA8335;
+}
+
+.eye-icon{
+    width:40px;
+    position:absolute;
+    right:10px;
+    top:45px;
+}
+.eye-icon path{
+    fill:white;
+}
+
+.log-in, .reg-link{
+    border:none;
+    padding:.35em .8em;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor:pointer;
+    color:white;
+    text-align: center;
+    transition:background-color 150ms ease-in-out;
+}
+.log-in{
+    background-color: #FFA02B;
+}
+.log-in:hover,.log-in:focus{
+    outline:none;
+    background-color: #EE901A;
+}
+
+.reg-link{
+    background-color: #288AFF;
+}
+.reg-link:hover,.reg-link:focus{
+    outline:none;
+    background-color: #1779EE;
+}
+
+.container__bottom{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    gap:10px;
+}
+
+@media(max-width:462px){
+    .container__bottom{
+        flex-direction: column;
+        gap:20px;
+    }
+}
+.error{
+    color:red;
+    font-weight: 700;
+    display:block;
+    width:fit-content;
+    margin:0 auto;
+    margin-bottom: 1em;
+}
+
+.container--2el{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+    width:100%;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 40vh;
+}

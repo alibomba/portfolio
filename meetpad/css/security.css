@@ -1,0 +1,182 @@
+.main__header{
+    border-bottom: 1px solid var(--grayish-text-color);
+    padding:1em .6em;
+}
+.heading{
+    text-align: center;
+}
+.edit-icon path{
+    fill:var(--text-color);
+}
+.close-button{
+    display:none;
+    cursor:pointer;
+}
+.close-button path{
+    fill:red;
+}
+.delete-icon path{
+    fill:red;
+}
+svg{
+    width:40px;
+}
+.input-container{
+    width:fit-content;
+    position:relative;
+}
+.eye-icon{
+    position:absolute;
+    right:10px;
+    top:9px;
+    width:35px;
+    cursor:pointer;
+}
+.eye-icon path{
+    fill:white;
+}
+.edit-button{
+    cursor:pointer;
+}
+.field{
+    border:none;
+    background-color: var(--orange);
+    font-size: 1.5rem;
+    padding:.5em;
+    padding-left:1em;
+    border-radius: 12px;
+    color:white;
+}
+.purple-button{
+    color:white;
+    font-size: 1.5rem;
+    border:none;
+    background-color: var(--add-friend);
+    padding:.45em .8em;
+    border-radius: 10px;
+    cursor:pointer;
+}
+.red-button{
+    color:white;
+    font-size: 1.5rem;
+    border:none;
+    background-color: red;
+    padding:.45em .8em;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+.message{
+    font-size: 1.5rem;
+}
+.message-good{
+    color:green;
+}
+.message-bad{
+    color:red;
+}
+.mail-message{
+    font-size: 1.5rem;
+    color:aqua;
+}
+.active{
+    display:block;
+}
+.invisible{
+    display:none;
+}
+
+
+
+
+.settings{
+    padding-block: 3em;
+    display:flex;
+    flex-direction: column;
+    gap:50px;
+}
+.setting__name{
+    display:flex;
+    align-items: center;
+    gap:10px;
+    margin-bottom: 3em;
+}
+.setting__name .bold{
+    font-size: 1.5rem;
+}
+.settings__element{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.toggle-content{
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    gap:25px;
+}
+
+.active--flex{
+    display:flex;
+}
+
+
+.delete-account-modal{
+    position:fixed;
+    font-size: 2rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:30px;
+    background-color:var(--add-friend);
+    padding:.5em 1em;
+    border-radius: 20px;
+    left:50%;
+    transform:translateX(-50%);
+    top:40%;
+    z-index: 100000000;
+    opacity:0;
+    pointer-events: none;
+}
+.delete-account-modal--active{
+    opacity:1;
+    pointer-events: all;
+}
+.delete-confirm,.delete-cancel{
+    font-size: 1.7rem;
+    padding:.25em .5em;
+    border:none;
+    border-radius: 15px;
+    cursor:pointer;
+    transition:background-color 200ms ease-in-out;
+}
+.delete-confirm{
+    background-color: red;
+    color:white;
+}
+.delete-confirm:hover{
+    background-color: #cc0000;
+}
+.delete-cancel{
+    background-color: #008000;
+    color:white;
+}
+.delete-cancel:hover{
+    background-color: #006000;
+}
+.delete-account-modal p{
+    margin:0;
+    text-align: center;
+}
+.delete-account-modal__bottom{
+    display:flex;
+    gap:25px;
+}
+@media(max-width:420px){
+    .delete-account-modal{
+        font-size: 1.5rem;
+    }
+    .delete-confirm,.delete-cancel{
+        font-size: 1.3rem;
+    }
+}

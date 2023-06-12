@@ -1,0 +1,32 @@
+.produkt--ulubione,.produkt--ulubione > .produkt__bottom{
+    border-color: var(--secondary);
+}
+.ulubione{
+    border-bottom: 1px solid black;
+}
+.ulubione:not(:has(.brak-produktow-big)),.zobacz-tez__grid{
+    padding:3em;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:30px;
+    justify-items: center;
+}
+.zobacz-tez__heading{
+    padding: 1em 0 0 3em;
+    font-size: 3rem;
+}
+.brak-produktow-big{
+    background-color: #f63636;
+    color:white;
+    font-size: 4rem;
+    font-weight: bold;
+    width:80%;
+    margin: 0 auto;
+    padding: 1em;
+    margin-block: 2em;
+    text-align: center;
+}
+.brak-ocen{
+    font-size: 1.3rem;
+    text-align: center;
+}

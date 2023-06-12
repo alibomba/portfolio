@@ -1,0 +1,91 @@
+body{
+    display: flex;
+}
+.img{
+    width:50vw;
+    background-image: url(../img/login.jpg);
+    background-size: 90%;
+    background-repeat: no-repeat;
+}
+.img--logowanie{
+    height: 100vh;
+}
+.img--rejestracja{
+    height: 117vh;
+}
+main{
+    margin: 0 auto;
+    padding: 2em;
+}
+.pasek{
+    display: flex;
+    align-items: center;
+    gap:50px;
+}
+.link{
+    font-size: 2.7rem;
+    font-weight: bold;
+    position: relative;
+    width: fit-content;
+}
+.link:hover{
+    opacity: .4;
+}
+.link--active::after{
+    content: '';
+    width: 100%;
+    height: 5px;
+    background-color: var(--primary);
+    position: absolute;
+    bottom:-7px;
+    left:0;
+}
+.column{
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px
+}
+.column--logowanie{
+    margin-top: 30vh;
+}
+.column--rejestracja{
+    margin-top: 8vh;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    position: relative;
+}
+.field{
+    font-size: 2rem;
+    border: 5px solid var(--primary);
+    padding: .3em;
+}
+.haslo-eye{
+    width: 45px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    bottom:9px;
+}
+.error{
+    color:red;
+    font-size: 1.7rem;
+}
+.button{
+    font-size: 2rem;
+    background-color: var(--thirdary);
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: .3em 1em;
+    cursor: pointer;
+    transition: background-color 150ms ease-in-out;
+    margin-top: 1em;
+}
+.button:hover{
+    background-color: var(--thirdary-hover);
+}

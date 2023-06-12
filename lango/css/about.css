@@ -1,0 +1,116 @@
+/* liczby */
+.liczby{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 2em;
+    gap:50px;
+}
+.liczby__element{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.liczby__element__number{
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+.liczby__element__desc{
+    font-size: 2rem;
+    max-width: 17ch;
+    text-align: center;
+}
+@media(max-width:760px){
+    .liczby{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media(max-width:530px){
+    .liczby{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* koniec liczb */
+
+
+/* o nas */
+.o-nas{
+    margin-top: 5em;
+    padding: 3em;
+}
+.o-nas__heading{
+    font-size: 3.5rem;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.o-nas__text{
+    font-size: 1.7rem;
+    text-align: center;
+    line-height: 2;
+}
+@media(max-width:500px){
+    .o-nas{
+        padding: 1em;
+    }
+    .o-nas__text{
+        font-size: 1.4rem;
+    }
+}
+/* koniec o nas */
+
+
+/* info */
+.info{
+    margin-top: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:50px;
+    padding: 3em;
+}
+.info__element{
+    display: flex;
+    align-items: center;
+    gap:30px;
+}
+.info__element__icon{
+    width: 130px;
+}
+.info__element__right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:5px;
+}
+.info__element__right__main{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.info__element__right__second{
+    font-size: 1.8rem;
+}
+@media(max-width:600px){
+    .info__element{
+        flex-direction: column;
+    }
+}
+@media(max-width:450px){
+    .info__element__right__main{
+        font-size: 2rem;
+        white-space: nowrap;
+    }
+    .info__element__right__second{
+        font-size: 1.4rem;
+    }
+}
+@media(max-width:320px){
+    .info__element__right__main{
+        font-size: 1.6rem;
+    }
+    .info__element__right__second{
+        font-size: 1.1rem;
+    }
+}
+/* koniec info */

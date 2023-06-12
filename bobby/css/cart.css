@@ -1,0 +1,180 @@
+main{
+    padding:2em 1em;
+}
+.product{
+    background-color: var(--partnerzy);
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline:2em;
+    border-radius: 30px;
+}
+.product + .product{
+    margin-top: 2em;
+}
+.product__left{
+    display:flex;
+    align-items: center;
+    gap:25px;
+}
+.product__img{
+    width:125px;
+    height:80px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+}
+.product__name{
+    text-transform: uppercase;
+    font-family: var(--headings);
+    font-size: 2.5rem;
+    font-weight: bold;
+    color:white;
+}
+.product__minus,.product__plus{
+    width:40px;
+    cursor:pointer;
+}
+.product__minus path,.product__plus path{
+    fill:white;
+}
+.product__amount{
+    color:white;
+    font-size: 2.5rem;
+}
+.product__switches{
+    display:flex;
+    align-items: center;
+    gap:10px;
+    background-color: var(--header-footer);
+    padding:.4em;
+    border-radius: 15px;
+}
+.product__amount{
+    margin:0;
+}
+
+.product__right{
+    display:flex;
+    align-items: center;
+    gap:15px;
+}
+.product__price{
+    font-size: 2.5rem;
+    color:white;
+    margin: 0;
+}
+.product__delete{
+    cursor:pointer;
+    width:35px;
+}
+.kup-teraz{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    width:95vw;
+    display: block;
+    margin: 0 auto;
+    margin-top: 1.5em;
+    padding-block:.6em;
+    text-align: center;
+    border: none;
+    border-radius: 25px;
+    background: var(--gradient);
+    color:white;
+    cursor: pointer;
+}
+.brak{
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+/* modal */
+.kup-modal{
+    position:fixed;
+    top:10%;
+    left:calc(50% - 316.5px);
+    background-color: var(--primary);
+    color:white;
+    font-size: 2rem;
+    padding:1em 4em;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,.7);
+    opacity: 0;
+    pointer-events: none;
+}
+.kup-modal--active{
+    opacity: 1;
+    pointer-events: all;
+}
+#kup-form{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+.okienko{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+}
+.okienko>label{
+    font-weight: bold;
+}
+.field{
+    background-color: var(--secondary);
+    border:none;
+    font-size: 1.7rem;
+    padding:.4em;
+    padding-left:.75em;
+    color:white;
+    border-radius: 20px;
+}
+.cena>p{
+    margin:0;
+}
+.cena{
+    display:flex;
+    flex-direction: column;
+    gap:5px;
+}
+.zaplac-button{
+    background-color: var(--secondary);
+    color:white;
+    padding:.5em;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor:pointer;
+}
+
+.kup-teraz__close{
+    width:40px;
+    position:absolute;
+    top:15px;
+    right:15px;
+    cursor: pointer;
+}
+.popup{
+    color:white;
+    background-color: gray;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding:1em;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.7);
+    position:fixed;
+    top:70%;
+    left:calc(50% - 332.5px);
+    transform: translateY(250%);
+    transition: transform 100ms ease-in-out;
+}
+.popup--active{
+    transform: translateY(0);
+}

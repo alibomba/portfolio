@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bobby</title>
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/generic.css">
+    <link rel="stylesheet" href="css/glowna.css">
+    <script src="kontakt_dropdown.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="homepage"><img class="header__logo" src="img/logo.png" alt="bobby restaurant logo"></a>
+        <div class="header__nav">
+            <a class="header__nav-link" href="menu">Menu</a>
+            <a class="header__nav-link" href="koszyk">Koszyk</a>
+            <p class="header__nav-link header__kontakt">Kontakt</p>
+            <div class="kontakt-dropdown">
+                <p><span class="bold">Tel:</span> +48 112 245 823</p>
+                <img class="close-kontakt-dropdown" src="img/icons/close-icon.png" alt="close icon">
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="hero">
+            <div class="hero__left">
+                <h2 class="hero__heading">Danie dnia</h2>
+                <p class="hero__text">Codziennie losujemy dla Państwa danie dnia, które można nabyć w cenie o 30% niższej niż normalnie. Jest to również szansa, by skosztować nowych smaków, których wcześniej się nie jadło. Zapraszamy do wypróbowania naszej oferty.</p>
+                <div class="hero__buttons">
+                    <a href="menu" class="zamow-teraz">Zamów teraz</a>
+                    <a href="#" class="wartosci-odzywcze">Wartości odżywcze</a>
+                </div>
+            </div>
+            <img class="hero__img" src="img/hero_img.jpg" alt="danie dnia">
+        </section>
+        <section class="order">
+            <div class="order__absolute">
+                <span class="order__absolute__title bold">Zamów online lub przez telefon</span>
+                <span class="order__absolute__phone"><span class="bold">Tel:</span> +48 112 245 823</span>
+            </div>
+        </section>
+        <section class="location">
+            <h2 class="location__heading">Nasz lokal</h2>
+            <p class="location__desc">00-005 Warszawa<br>ul.Krzyżowa, 18/9</p>
+            <iframe class="location__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4885.999367107699!2d21.000646019393017!3d52.24338939965339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc636a82ac6d%3A0xb0be821515c1be02!2sThaisty!5e0!3m2!1spl!2spl!4v1663499345636!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <section class="wynajem">
+            <div class="wynajem__absolute">
+                <span class="wynajem__absolute__title">Wynajem sal</span>
+                <p class="wynajem__absolute__text">W naszym lokalu jest możliwość wynajęcia sali wraz z jedzeniem oraz obsługą na imprezy okolicznościowe.</p>
+            </div>
+            <a class="wynajem__button" href="#">Dowiedz się więcej</a>
+        </section>
+        <section class="dania">
+            <article class="keto">
+                <svg class="keto__icon" width="50" height="50" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.96301 1.286C9.90274 1.20524 9.82682 1.13745 9.73978 1.08668C9.65274 1.03592 9.55636 1.00321 9.45639 0.990514C9.35643 0.97782 9.25493 0.9854 9.15796 1.0128C9.06099 1.0402 8.97054 1.08686 8.892 1.15C6.97533 2.68882 5.71118 4.89527 5.353 7.327C4.69602 6.85009 4.12029 6.27031 3.648 5.61C3.58383 5.5203 3.50067 5.44586 3.40444 5.39198C3.30821 5.3381 3.20129 5.3061 3.09128 5.29827C2.98127 5.29044 2.87088 5.30697 2.76799 5.34667C2.6651 5.38638 2.57223 5.44829 2.496 5.528C1.17517 6.90942 0.328402 8.67547 0.0783654 10.5703C-0.171672 12.4651 0.188005 14.3904 1.10529 16.0671C2.02258 17.7439 3.44985 19.0851 5.18034 19.8965C6.91084 20.7079 8.85471 20.9473 10.7304 20.58C12.606 20.2128 14.316 19.2579 15.6128 17.8538C16.9095 16.4498 17.7255 14.6693 17.9427 12.7704C18.1599 10.8715 17.7669 8.95281 16.8208 7.29219C15.8746 5.63157 14.4243 4.31528 12.68 3.534C11.6077 3.01257 10.676 2.2417 9.96301 1.286V1.286ZM12.75 13.25C12.7496 13.7924 12.6316 14.3283 12.404 14.8207C12.1764 15.3131 11.8448 15.7502 11.4318 16.102C11.0189 16.4538 10.5346 16.7118 10.0123 16.8582C9.49003 17.0046 8.94219 17.036 8.40659 16.9502C7.871 16.8643 7.3604 16.6633 6.91002 16.361C6.45964 16.0587 6.08021 15.6623 5.79791 15.1991C5.5156 14.7359 5.33714 14.217 5.27483 13.6782C5.21252 13.1393 5.26785 12.5934 5.43701 12.078C6.06501 12.543 6.787 12.888 7.57 13.078C7.78251 11.7093 8.46278 10.4566 9.495 9.533C10.3958 9.65296 11.2225 10.096 11.8212 10.7797C12.4199 11.4634 12.75 12.3412 12.75 13.25V13.25Z" fill="black"/>
+                    </svg>
+                <h3 class="keto__heading">Dania ketogeniczne</h3>
+                <p class="keto__text">Jesteś na diecie ketogenicznej lub po prostu ograniczasz węglowodany? Wypróbuj naszych przepysznych dań niskowęglowodanowych.</p>
+            </article>
+            <article class="wegetarian">
+                <svg width="50" height="50" viewBox="0 0 27 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.6109 0.0647357C11.4953 0.28552 10.2185 1.00849 8.99872 2.09951C6.49539 4.34526 3.98862 7.96308 2.30176 11.7617C0.302503 16.2699 -0.413276 20.6341 0.228578 24.4194C0.598197 26.5981 1.41811 28.5627 2.65799 30.2528C3.1956 30.9824 4.12308 31.963 4.82192 32.5387C6.32065 33.7706 8.16542 34.7044 10.0269 35.1691C12.9536 35.902 16.1089 35.6611 18.834 34.5001C23.1922 32.6425 26.1089 28.7066 26.7372 23.8236C26.9288 22.3209 26.9119 20.44 26.6869 18.9072C26.3509 16.6013 25.7224 14.4224 24.7111 12.063C24.3717 11.2764 23.5786 9.67671 23.1452 8.91698C21.1258 5.35932 18.7568 2.54461 16.5356 1.05872C15.783 0.556645 14.8824 0.168389 14.1902 0.0512619C13.7736 -0.0223709 13.0041 -0.0156324 12.6109 0.0647357Z" fill="black"/>
+                    </svg>                    
+                <h3 class="wegetarian__heading">Dania wegetariańskie</h3>
+                <p class="wegetarian__text">Jesteś wegetarianinem? Nie ma problemu. Mamy dla Ciebie znakomite bezmięsne posiłki, które na pewno Cię nasycą.</p>
+            </article>
+            <article class="wegan">
+                <svg class="wegan__icon" width="50" height="50" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M725.333333 341.333333C341.333333 426.666667 251.733333 689.92 162.986667 910.506667l80.64 28.16 40.533333-98.133334c20.48 7.253333 41.813333 12.8 57.173333 12.8C810.666667 853.333333 938.666667 128 938.666667 128c-42.666667 85.333333-341.333333 96-554.666667 138.666667S85.333333 490.666667 85.333333 576s74.666667 160 74.666667 160C298.666667 341.333333 725.333333 341.333333 725.333333 341.333333z" fill=""/></svg>
+                <h3 class="wegan__heading">Dania wegańskie</h3>
+                <p class="wegan__text">A może żywisz się jedynie produktami roślinnymi? Również jesteśmy na to gotowi. Wysokoenergetyczne dania wegańskie już w naszym menu.</p>
+            </article>
+        </section>
+    </main>
+    <footer class="footer">
+        <section class="partnerzy">
+            <h2 class="partnerzy__heading">Partnerzy</h2>
+            <div class="partnerzy__logos">
+                <a href="#" target="_blank"><img src="img/icons/logos/knorr.png" alt="logo knorr" class="partnerzy__logo"></a>
+                <a href="#" target="_blank"><img src="img/icons/logos/lisner.png" alt="logo lisner" class="partnerzy__logo"></a>
+                <a href="#" target="_blank"><img src="img/icons/logos/pudliszki.png" alt="logo pudliszki" class="partnerzy__logo"></a>
+                <a href="#" target="_blank"><img src="img/icons/logos/tymbark.png" alt="logo tymbark" class="partnerzy__logo"></a>
+                <a href="#" target="_blank"><img src="img/icons/logos/zywiec.png" alt="logo żywiec" class="partnerzy__logo"></a>
+            </div>
+        </section>
+        <section class="footer__footer">
+            <div class="footer__top">
+                <a href="homepage"><img class="footer__logo" src="img/logo.png" alt="bobby restaurant logo"></a>
+                <div class="footer__links">
+                    <p class="footer__links__heading">Linki</p>
+                    <a href="#" class="footer-link">Regulamin</a>
+                    <a href="#" class="footer-link">Newsletter</a>
+                    <a href="#" class="footer-link">Współpraca</a>
+                </div>
+                <div class="footer__information">
+                    <p class="footer__information__heading">Informacje</p>
+                    <span class="footer__information__element"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/></svg> +48 123 998 011</span>
+                    <span class="footer__information__element"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg> biznes@bobby.pl</span>
+                    <span class="footer__information__element"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z"/></svg> 00-005 Warszawa<br>ul.Krzyżowa, 18/9</span>
+                    <div class="footer__social-media">
+                        <a href="#" target="_blank" class="footer__social-link">
+                            <svg class="facebook-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                        </a>
+                        <a href="#" target="_blank" class="footer__social-link">
+                            <svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" target="_blank" class="footer__social-link">
+                            <svg class="twitter-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="copyright-text">Bobby. Wszystkie prawa zastrzeżone &copy;</p>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>

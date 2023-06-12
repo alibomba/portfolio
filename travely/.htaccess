@@ -1,0 +1,15 @@
+### PROTECT FILES ###
+<FilesMatch "\.(htaccess|htpasswd|ini|fla|psd|log|sh)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+RewriteEngine on
+RewriteRule homepage index.php
+RewriteRule pakiety packages.php
+RewriteRule pakiet package.php
+RewriteRule logowanie login.php
+RewriteRule rejestracja sign-up.php
+RewriteRule kontakt contact.php
+RewriteRule opinie feedback.php
+RewriteRule konto edit.php

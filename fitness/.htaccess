@@ -1,0 +1,11 @@
+### PROTECT FILES ###
+<FilesMatch "\.(htaccess|htpasswd|ini|fla|psd|log|sh)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+RewriteEngine on
+RewriteRule homepage index.html
+RewriteRule abonamenty abons.php
+RewriteRule BMI kalkulator.html
+RewriteRule kontakt contact.html

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator BMI</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="css/generic.css">
+    <link rel="stylesheet" href="css/kalkulator.css">
+    <script src="kalkulator.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="homepage"><img class="header__logo" src="img/logo.svg" alt="logo"></a>
+        <nav class="header__nav">
+            <a class="header__nav-link" href="homepage">Strona główna</a>
+            <a class="header__nav-link" href="abonamenty">Abonamenty</a>
+            <a class="header__nav-link header__nav-link--active" href="BMI">BMI</a>
+            <a class="header__nav-link" href="kontakt">Kontakt</a>
+        </nav>
+    </header>
+    <main class="bmi">
+        <div class="column">
+            <label for="wzrost">Podaj wzrost(cm):</label>
+            <input type="number" min="0" class="input-orange" id="wzrost">
+        </div>
+        <div class="column">
+            <label for="waga">Podaj wagę(kg):</label>
+            <input type="number" min="0" class="input-orange" id="waga">
+        </div>
+        <button class="bmi__button">Oblicz</button>
+    </main>
+    <footer class="footer__bottom">
+        <a href="homepage"><img src="img/logo-black.png" alt="black logo" class="footer__logo"></a>
+        <form class="footer__bottom__cta">
+            <input placeholder="Newsletter" type="text" id="newsletter" class="footer__bottom__input">
+            <input type="submit" value="Wyślij" class="footer__button">
+        </form>
+    </footer>
+</body>
+</html>

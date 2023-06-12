@@ -1,0 +1,287 @@
+/* poczatek hero */
+.hero{
+    display:flex;
+    justify-content: center;
+    gap:5%;
+    padding:1.5em;
+    margin-bottom: 1.5em;
+}
+.hero__img{
+    width: 40%;
+    min-width: 322px;
+    object-fit: contain;
+}
+.hero__left{
+    flex-basis: 40%;
+}
+.hero__heading{
+    font-family: var(--headings);
+    font-size: 2rem;
+    color:var(--primary);
+}
+.hero__text{
+    margin-block:2em;
+    max-width: 50ch;
+    line-height: 1.55;
+    color:var(--neutral);
+}
+.hero__buttons{
+    display:flex;
+    gap:15px;
+    width: fit-content;
+}
+.zamow-teraz,.wartosci-odzywcze{
+    border-radius:5px;
+    padding:.5em 1em;
+    font-size: 1.1rem;
+    color:white;
+    white-space: nowrap;
+    transition:background-color 150ms ease-in-out;
+}
+.zamow-teraz{
+    background-color: var(--primary);
+}
+.zamow-teraz:hover{
+    background-color: #BB2200;
+}
+.zamow-teraz:active{
+    opacity:.8;
+}
+.wartosci-odzywcze{
+    background-color: var(--secondary);
+}
+.wartosci-odzywcze:hover{
+    background-color: #552200;
+}
+.wartosci-odzywcze:active{
+    opacity:.8;
+}
+@media(max-width:832px){
+    .hero{
+        flex-direction: column;
+        align-items: center;
+        gap:50px;
+        text-align: center;
+    }
+    .hero__buttons{
+        margin: 0 auto;
+    }
+    .hero__text{
+        width:80%;
+        margin: 2em auto;
+    }
+}
+@media(max-width:390px){
+    .hero__buttons{
+        flex-direction: column;
+    }
+    .hero__img{
+        width:70%;
+        min-width: 230px;
+        margin: 0 auto;
+    }
+}
+/* koniec hero */
+
+
+/* poczatek order */
+
+/* .order__bg{
+    width: 100%;
+    height:300px;
+    max-height: 300px;
+    object-fit: cover;
+} */
+.order{
+    background-image: url(../img/delivery.jpg);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width:100%;
+    height:300px;
+    position:relative;
+}
+.order__absolute{
+    display:flex;
+    flex-direction: column;
+    gap:15px;
+    background-color: var(--primary);
+    max-width:400px;
+    width:100%;
+    padding:.8em;
+    font-size: 2rem;
+    position:absolute;
+    right:0;
+    top:20%;
+    text-align: center;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+}
+.order__absolute__phone{
+    color:var(--neutral-80);
+}
+.order__absolute__phone>.bold{
+    color:var(--neutral);
+}
+@media(max-width:600px){
+    .order__absolute{
+        font-size: 1rem;
+        top:40%;
+        padding:.4em;
+    }
+}
+@media(max-width:400px){
+    .order__absolute{
+        border-radius: 25px;
+    }
+}
+/* koniec order */
+
+
+/* poczatek location */
+.location{
+    width:80%;
+    max-width:800px;
+    margin:0 auto;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-block:2em;
+}
+.location__heading,.location__desc{
+    margin:0;
+}
+.location__heading{
+    font-size: 2.3rem;
+    margin-bottom: .3em;
+    font-family: var(--headings);
+}
+.location__desc{
+    margin-bottom: 2em;
+    line-height: 1.4;
+    color:var(--neutral-80);
+}
+.location__map{
+    width:100%;
+    border-radius: 30px;
+}
+/* koniec location */
+
+
+/* poczatek wynajem */
+.wynajem{
+    width:100%;
+    height:550px;
+    background-image: url(../img/wynajem.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    position:relative;
+    font-size: 1.7rem;
+}
+.wynajem__absolute{
+    position:absolute;
+    left:0;
+    top:25%;
+    color:white;    
+    background: var(--gradient);
+    padding:1em;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.wynajem__absolute__text{
+    max-width: 25ch;
+    margin:0;
+    margin-top: 1em;
+}
+.wynajem__absolute__title{
+    font-family: var(--headings);
+    font-size: 2.3rem;
+}
+.wynajem__button{
+    position:absolute;
+    left:30px;
+    top:80%;
+    border-radius: 10px;
+    padding:.5em 1em;
+    color:white;
+    background: var(--gradient);
+}
+.wynajem__absolute,.wynajem__button{
+    box-shadow: 5px 5px 5px rgba(0,0,0,.7);
+}
+@media(max-width:750px){
+    .wynajem{
+        font-size: 1.2rem;
+        background-size: 200%;
+    }
+    .wynajem__button{
+        top:70%;
+    }
+    .wynajem__absolute{
+        width:100%;
+        border-radius: 0px;
+        text-align: center;
+    }
+    .wynajem__absolute__text{
+        margin-inline: auto;
+    }
+    .wynajem__button{
+        left:calc(50% - 100px);
+    }
+}
+/* koniec wynajem */
+
+
+/* poczatek dania */
+.dania{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:4%;
+    padding:3em;
+}
+.dania>article{
+    text-align: center;
+}
+.dania p{
+    max-width: 40ch;
+    line-height: 1.7;
+}
+.dania h3{
+    font-family: var(--headings);
+    font-size: 1.5rem;
+    margin:.5em;
+}
+.dania path{
+    fill:var(--primary);
+}
+@media(max-width:620px){
+    .dania{
+        flex-direction: column;
+    }
+}
+/* koniec dania */
+
+
+/* poczatek partnerzy */
+.partnerzy{
+    text-align: center;
+    font-size: 2rem;
+    font-family: var(--headings);
+    background-color: var(--partnerzy);
+    padding:1em 3em;
+}
+.partnerzy__logos{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media(max-width:1240px){
+    .partnerzy__logos{
+        flex-direction: column;
+    }
+    .partnerzy{
+        font-size: 1.5rem;
+    }
+}
+/* koniec partnerzy */

@@ -1,0 +1,100 @@
+/* pasek wyboru */
+.pasek-wyboru{
+    display: flex;
+    align-content: center;
+    gap:4em;
+    padding:2em 4em;
+    overflow-x: scroll;
+    border-bottom: 1px solid black;
+}
+.pasek__link{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+.pasek__link--active > .pasek__link__img{
+    filter:saturate(1);
+}
+.pasek__link__img{
+    height:105px;
+    filter: saturate(0);
+    transition: filter 100ms ease-in-out;
+}
+.pasek__link:hover > .pasek__link__img{
+    filter: saturate(1);
+}
+.pasek__link__text{
+    font-size: 2.5rem;
+}
+/* koniec paska wyboru */
+
+
+.main{
+    display: flex;
+}
+
+/* aside */
+.aside{
+    border-right: 1px solid black;
+    padding: 2em 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+    flex-basis: 25%;
+}
+.cena{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+}
+.cena__heading{
+    font-size: 2rem;
+}
+.cena__input{
+    font-size: 1.5rem;
+    width:200px;
+    border: 4px solid black;
+    padding:.3em;
+}
+.sortuj-label{
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+.sortuj-label__icon{
+    width:50px;
+}
+.sortuj{
+    font-size: 1.5rem;
+}
+/* koniec aside */
+
+
+/* produkty */
+.produkty:not(:has(.brak-wynikow)){
+    padding:3em;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3,1fr);
+    gap:40px;
+    flex-basis: 70%;
+    margin: 0 auto;
+}
+.brak-wynikow{
+    font-size: 2.5rem;
+    background-color: rgb(255, 63, 63);
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 2em;
+    margin: 0 auto;
+    transform: translate(50%,20%);
+}
+@media(max-width:1700px){
+    .produkty{
+        grid-template-columns: repeat(2,1fr);
+    }
+}

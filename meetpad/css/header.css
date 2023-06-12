@@ -1,0 +1,208 @@
+.header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 3em;
+    background-color: var(--header-bg);
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 10000;
+}
+body{
+    padding-top:104px;
+}
+
+.header__logo{
+    width:250px;
+    height:100px;
+}
+.header__search-bar{
+    height:40px;
+    width:250px;
+    padding-left: 2em;
+    border:none;
+    background-color: var(--orange);
+    border-radius: 15px;
+    font-size: 1.1rem;
+    cursor:pointer;
+    position:relative;
+}
+.header__search-bar--container{
+    position:relative;
+}
+.search-icon{
+    position:absolute;
+    width:25px;
+    left:7px;
+    top:7px;
+    cursor:pointer;
+}
+.header__search-bar:focus, .header__search-bar:hover{
+    outline:none;
+    background-color: #dc8335;
+}
+.header__search-bar::placeholder{
+    color:rgba(0,0,0,.7);
+}
+
+.header__nav-link{
+    width:45px;
+    background-color: var(--orange);
+    padding:.3em;
+    border-radius: 25px;
+}
+.header__nav-link:hover,.header__nav-link:focus{
+    background-color: #dc8335;
+    outline:none;
+}
+.header__nav a{
+    position:relative;
+}
+.header__nav a::after{
+    color:white;
+    background-color: gray;
+    position:absolute;
+    bottom:-33px;
+    padding:.25em .5em;
+    border-radius: 8px;
+    opacity:0;
+    transition:opacity 150ms ease-in-out;
+    cursor:default;
+}
+.header__nav a[href="events"]::after{
+    content:'Wydarzenia';
+    left:-26px;
+}
+.header__nav a[href="messages"]::after{
+    content:'Wiadomości';
+    left:-30px;
+}
+.header__nav a[href="powiadomienia"]::after{
+    content:'Powiadomienia';
+    left:-40px;
+}
+.header__nav a[href="events"]:hover::after,.header__nav a[href="messages"]:hover::after,.header__nav a[href="powiadomienia"]:hover::after{
+    opacity:1;
+}
+.header__nav{
+    display:flex;
+    gap:15px;
+    position:relative;
+}
+.header__pfp{
+    cursor:pointer;
+    position:relative;
+}
+.header__pfp:hover{
+    opacity:.85;
+}
+@media(max-width:890px){
+    .header__search-bar{
+        width:13px;
+        transition: width 150ms ease-in-out;
+    }
+    .header__search-bar:focus{
+        width:130px
+    }
+}
+@media(max-width:700px){
+    .header__pfp{
+        margin-left: 1em;
+    }
+    .header__nav > a{
+        display:none;
+    }
+}
+
+
+/* account settings tooltip */
+.account-settings-tooltip__close{
+    position:absolute;
+    top:8px;
+    right:8px;
+    cursor:pointer;
+}
+.account-settings-tooltip__close path{
+    fill:red;
+}
+
+
+.header__pfp--container{
+    position:relative;
+}
+.account-settings-tooltip{
+    background-color: var(--orange);
+    position:absolute;
+    right:-5px;
+    width:250px;
+    font-size: 1.2rem;
+    padding:1em;
+    border-radius: 15px;
+    box-shadow: -5px 5px 5px rgba(0,0,0,.8);
+    opacity:0;
+    pointer-events: none;
+    transition:opacity 150ms ease-in-out;
+}
+.account-settings-tooltip--active{
+    opacity:1;
+    pointer-events: all;
+}
+.account-settings-tooltip__top{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--text-color);
+}
+.account-settings-tooltip__top__right{
+    display:flex;
+    align-items: center;
+    gap:5px;
+}
+.account-settings-tooltip a{
+    display:flex;
+    align-items: center;
+    gap:10px;
+    padding:.3em;
+    border-radius: 10px;
+    transition: background-color 200ms ease-in-out;
+}
+.account-settings-tooltip a path{
+    fill:var(--text-color);
+}
+.account-settings-tooltip a:hover{
+    background-color: #bd7638;
+}
+.account-settings-tooltip a:last-child:hover{
+    background-color: rgb(175, 22, 22);
+}
+.account-settings-tooltip__bottom{
+    display:flex;
+    flex-direction: column;
+    gap:15px;
+    padding-top:1em;
+}
+.darkmode-toggle{
+    cursor:pointer;
+}
+.settings-link{
+    font-weight: bold;
+}
+
+/* notis number */
+.unread-notifications:not(:empty){
+    color:white;
+    font-weight: bold;
+    background-color: red;
+    padding:.4em .7em;
+    font-size: .85rem;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top:-10px;
+    right:-10px;
+    pointer-events: none;
+}

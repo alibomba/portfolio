@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteRule homepage index.php
+RewriteRule sklep store.php
+RewriteRule ulubione favourite.php
+RewriteRule konto profile.php
+RewriteRule logowanie login.php
+RewriteRule o-nas about.php
+RewriteRule koszyk cart.php
+RewriteRule produkt product.php
