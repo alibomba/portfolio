@@ -1,0 +1,12 @@
+.button {
+    background: var(--gradient);
+    color: white;
+    padding: .8em 2em;
+    border-radius: 50px;
+    transition: opacity 150ms ease;
+    white-space: nowrap;
+}
+
+.button:hover {
+    opacity: .7;
+}
