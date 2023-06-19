@@ -1,0 +1,48 @@
+.section {
+    padding: 5em 3em;
+}
+
+.section__heading {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.section__questions {
+    width: 80%;
+    max-width: 1050px;
+    margin: 0 auto;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.section__paragraph {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: 2.3em;
+}
+
+.section__cta {
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+@media(max-width:640px) {
+    .section__cta {
+        flex-direction: column;
+    }
+}
+
+@media(max-width:520px) {
+    .section {
+        padding: 5em 1em;
+    }
+}
+
+@media(max-width:450px) {
+    .section__paragraph {
+        font-size: 1.2rem;
+    }
+}

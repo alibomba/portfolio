@@ -1,0 +1,47 @@
+.inputContainer {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+}
+
+.cta__input {
+    font-size: 1.9rem;
+    padding: .35em .8em .35em .5em;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, .4);
+    background-color: rgba(0, 0, 0, .3);
+    color: white;
+}
+
+.inputPlaceholder {
+    color: white;
+    position: absolute;
+    transition: all 200ms ease;
+    pointer-events: none;
+}
+
+.inputPlaceholder_big {
+    top: 20%;
+    left: .5em;
+    font-size: 1.9rem;
+}
+
+.inputPlaceholder_small {
+    top: 0;
+    left: 1em;
+    font-size: .9rem;
+}
+
+@media(max-width: 960px) {
+    .cta__input {
+        font-size: 1.4rem;
+    }
+
+    .inputPlaceholder_big {
+        font-size: 1.4rem;
+    }
+
+    .inputPlaceholder_small {
+        font-size: .75rem;
+    }
+}

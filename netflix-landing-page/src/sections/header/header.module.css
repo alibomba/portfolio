@@ -1,0 +1,88 @@
+.header {
+    background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/39f3c979-c105-4948-9c51-611eedf3a6fd/d08abfb5-c87c-43ec-b7a0-f8b671d57f87/PL-pl-20230612-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+.header>* {
+    position: relative;
+    z-index: 1;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.9) 100%);
+    ;
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+
+.header__logo {
+    width: 140px;
+    display: block;
+}
+
+.header__top,
+.header__top__right {
+    display: flex;
+    align-items: center;
+}
+
+.header__top {
+    justify-content: space-around;
+    padding: 1em;
+}
+
+.header__top__right {
+    gap: 2em;
+}
+
+.header__bottom {
+    display: grid;
+    place-items: center;
+    padding: 10em 3em;
+    text-align: center;
+}
+
+.header__heading {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+
+.header__text {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+}
+
+@media(max-width:960px) {
+
+    .header__heading {
+        font-size: 2.3rem;
+    }
+
+    .header__text {
+        font-size: 1.2rem;
+    }
+}
+
+@media(max-width: 560px) {
+    .header__cta {
+        flex-direction: column;
+    }
+}
+
+@media(max-width:520px) {
+    .header__top {
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    .header__bottom {
+        padding-inline: 1em;
+    }
+}

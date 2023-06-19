@@ -1,0 +1,9 @@
+@media(max-width:650px) {
+    .select {
+        width: 80px;
+    }
+
+    .select__text {
+        display: none;
+    }
+}
