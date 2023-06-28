@@ -1,0 +1,136 @@
+fieldset {
+    border: none;
+}
+
+legend {
+    font-size: 2.5rem;
+    margin-bottom: .5em;
+    font-weight: bold;
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    max-width: 500px;
+    gap: 2em;
+    height: fit-content;
+}
+
+
+.hour {
+    font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+    gap: .3em;
+    width: 170px;
+    border: 5px solid var(--primary);
+    padding: 1em;
+    border-radius: 13px;
+
+}
+
+.hour>label,
+.hour {
+    cursor: pointer;
+}
+
+
+
+
+.hour>input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+.hour>input:checked {
+    background-color: var(--secondary);
+}
+
+.loadingContainer {
+    width: fit-content;
+    height: fit-content;
+    display: block;
+}
+
+.loading {
+    width: 50%;
+    margin: 0 auto;
+    transform: translateX(50%);
+}
+
+.error {
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%);
+    left: 50%;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--black);
+    background-color: rgba(255, 0, 0, .4);
+    border-radius: 20px;
+    padding: 1em;
+    z-index: 100;
+}
+
+@media(max-width:1340px) {
+    legend {
+        font-size: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+    }
+}
+
+@media(max-width:600px) {
+    legend {
+        font-size: 1.8rem;
+    }
+
+    .grid {
+        width: 90%;
+    }
+
+    .hour {
+        font-size: 1.6rem;
+        width: 140px;
+    }
+}
+
+@media(max-width:480px) {
+    legend {
+        font-size: 1.5rem;
+    }
+
+    .hour {
+        font-size: 1rem;
+        width: 130px;
+        padding: 1.5em;
+    }
+}
+
+@media(max-width:410px) {
+    legend {
+        font-size: 1.2rem;
+    }
+
+    .hour {
+        font-size: .9rem;
+        gap: 1.5em;
+        padding: 1em;
+    }
+}

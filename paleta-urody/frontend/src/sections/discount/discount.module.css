@@ -1,0 +1,59 @@
+.discount {
+    padding: 5em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7%;
+}
+
+.discount__img {
+    width: 25em;
+    border: 7px solid var(--secondary);
+}
+
+.discount__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    height: fit-content;
+    width: fit-content;
+}
+
+.discount__text {
+    font-size: 2.3rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.discount__button {
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+@media(max-width:880px) {
+    .discount {
+        flex-direction: column;
+        gap: 3em;
+    }
+
+    .discount__right {
+        gap: 2em;
+    }
+}
+
+@media(max-width:510px) {
+    .discount__img {
+        width: 18em;
+    }
+
+    .discount__text {
+        font-size: 1.75rem;
+    }
+
+    .discount__button {
+        font-size: 1.45rem;
+    }
+}

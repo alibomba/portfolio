@@ -1,0 +1,35 @@
+.content {
+    font-size: 1.75rem;
+    color: var(--black-65);
+    padding: 2em;
+    line-height: 1.7;
+    max-width: 70ch;
+    margin: 0 auto;
+}
+
+.loading {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-block: 2em;
+}
+
+@media(max-width:700px) {
+    .content {
+        font-size: 1.3rem;
+    }
+}
+
+@media(max-width:400px) {
+    .content {
+        font-size: 1.1rem;
+        padding: 3em 1.3em;
+    }
+}

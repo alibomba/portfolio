@@ -1,0 +1,144 @@
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em 3em;
+}
+
+.top__info,
+.top__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: 2rem;
+    font-weight: 500;
+    max-width: 30ch;
+}
+
+.info__icon {
+    font-size: 4rem;
+    color: var(--primary);
+}
+
+.inputs__container {
+    display: flex;
+    flex-direction: column;
+    gap: .6em;
+}
+
+.inputs__label {
+    font-weight: 500;
+}
+
+.inputs__label,
+.inputs__input {
+    font-size: 2rem;
+}
+
+.inputs__input {
+    padding: .5em;
+    border: 5px solid var(--primary);
+}
+
+.content {
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.content__label {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.content__message {
+    font-size: 2rem;
+    resize: none;
+    width: 80%;
+    max-width: 1000px;
+    padding: .5em;
+    border: 5px solid var(--primary);
+}
+
+.button {
+    font-size: 2.7rem;
+    font-weight: bold;
+    padding: .4em 1em;
+    border-radius: 10px;
+    display: block;
+    width: fit-content;
+    margin: 2em auto;
+}
+
+.validationError {
+    font-size: 2rem;
+    margin-top: 1em;
+    color: red;
+    font-weight: 500;
+    text-align: center;
+}
+
+.notification {
+    font-size: 2.5rem;
+    position: fixed;
+    bottom: 1em;
+    left: 50%;
+    background: var(--gradient);
+    color: white;
+    padding: 1em;
+    transform: translateX(-50%);
+    border-radius: 30px;
+    translate: 0 150%;
+    transition: all 200ms cubic-bezier(.17, .67, .59, 1.36);
+}
+
+.notification_active {
+    translate: 0 0%;
+    width: fit-content;
+}
+
+@media(max-width:1060px) {
+    .top {
+        flex-direction: column;
+        gap: 5em;
+    }
+
+    .info {
+        flex-direction: column;
+        max-width: none;
+        text-align: center;
+    }
+}
+
+@media(max-width:500px) {
+    .top {
+        font-size: 1.5rem;
+    }
+
+    .inputs__label,
+    .inputs__input,
+    .content__message,
+    .content__label {
+        font-size: 1.5rem;
+    }
+
+    .inputs__input {
+        width: 80vw;
+    }
+
+    .validationError {
+        font-size: 1.3rem;
+    }
+
+    .button {
+        font-size: 2.2rem;
+    }
+}

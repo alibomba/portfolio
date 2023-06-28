@@ -1,0 +1,2 @@
+# Paleta Urody
+Paleta Urody to wymyślony salon piękności. Frontend został zrobiony w React, TypeScript i CSS Modules z integracją własnego REST API wykonanego w Laravelu za pomocą biblioteki Axios. Routing od strony frontendu jest zrobiony narzędziem react-router-dom. Można rezerwować datę i godzinę wizyty wraz z informacją na bieżąco o tym czy dana data jest już zajęta. Do tego wyświetlane są blogi z bazy danych oraz można wysłać wiadomość poprzez formularz kontaktowy bezpośrednio na stronie.

@@ -1,0 +1,188 @@
+.services {
+    margin-top: 3em;
+}
+
+.services__heading {
+    font-size: 4rem;
+    letter-spacing: 5px;
+    text-align: center;
+    position: relative;
+}
+
+.services__heading::after {
+    content: 'Najedź lub dotknij część ciała';
+    position: absolute;
+    bottom: -1em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: initial;
+    white-space: nowrap;
+}
+
+.services__main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 2em;
+}
+
+.services__main__heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.services__main__left {
+    width: 30%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.services__row {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.services__icon_small {
+    scale: 1.2;
+}
+
+.services__bottom {
+    margin-top: 4em;
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+}
+
+.services__bottom>.services__row {
+    font-size: 2.3rem;
+    font-weight: bold;
+    gap: .5em;
+    width: fit-content;
+}
+
+.services__icon_big {
+    scale: 1.4;
+}
+
+.services__icon_small,
+.services__icon_big {
+    fill: var(--primary)
+}
+
+area {
+    cursor: pointer;
+}
+
+area:hover,
+area:focus {
+    outline: 1px solid var(--black-65);
+}
+
+.services__main__img_250 {
+    display: none;
+}
+
+.services__main__map_250 {
+    display: none;
+}
+
+@media(max-width:1100px) {
+
+    .services__heading {
+        font-size: 3rem;
+    }
+
+    .services__heading::after {
+        font-size: 1rem;
+    }
+
+    .services__main__heading {
+        font-size: 2.1rem;
+    }
+
+    .services__main {
+        padding-inline: 2em;
+    }
+
+    .services__main__left>.services__row {
+        font-size: 1.3rem;
+    }
+
+    .services__main__img_400 {
+        display: none;
+    }
+
+    .services__main__img_250 {
+        display: block
+    }
+
+    .services__main__map_400 {
+        display: none;
+    }
+
+    .services__main__map_250 {
+        display: block;
+    }
+
+    .services__bottom {
+        padding-inline: 2em;
+    }
+
+    .services__bottom>.services__row {
+        font-size: 1.8rem;
+    }
+}
+
+@media(max-width:750px) {
+    .services__main {
+        flex-direction: column;
+    }
+
+    .services__main__left {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 80%;
+        max-width: 500px;
+    }
+
+    .services__main__img_250 {
+        margin-top: 3em;
+    }
+}
+
+@media(max-width:650px) {
+    .services__bottom {
+        margin-top: 7em;
+        flex-direction: column;
+        align-items: center;
+        gap: 3em;
+    }
+}
+
+@media(max-width:420px) {
+    .services__heading {
+        font-size: 2.5rem;
+    }
+
+    .services__main__heading {
+        font-size: 1.6rem;
+    }
+
+    .services__main__left {
+        font-size: .6rem;
+    }
+
+    .services__bottom>.services__row {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,16 @@
+.div {
+    width: 100vw;
+    height: 6px;
+}
+
+.primary {
+    background-color: var(--primary);
+}
+
+.secondary {
+    background-color: var(--secondary);
+}
+
+.tertiary {
+    background-color: var(--tertiary);
+}
