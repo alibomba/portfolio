@@ -1,0 +1,2 @@
+# Travely
+Travely to wymyślona agencja turystyczna. Projekt autorski wykonany w Figmie. Strona posiada takie funkcje jak logowanie i rejestracja, możliwość zostawienia opinii lub wiadomości do wsparcia przez użytkownika, filtrowanie ofert wyjazdów. Strona zrobiona w HTML, CSS, JavaScripcie, PHP i MySQL.
