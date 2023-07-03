@@ -15,9 +15,9 @@ class CORS
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!isset($_SERVER['HTTP_ORIGIN']) || $_SERVER['HTTP_ORIGIN'] !== 'http://localhost:3000') {
-            return response('Unauthorized origin!', 401);
-        }
+        // if(!isset($_SERVER['HTTP_ORIGIN']) || $_SERVER['HTTP_ORIGIN'] !== 'http://localhost:3000') {
+        //     return response('Unauthorized origin!', 401);
+        // }
         return $next($request)->header('Access-Control-Allow-Origin', 'http://localhost:3000');
     }
 }

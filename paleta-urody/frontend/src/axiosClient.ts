@@ -5,8 +5,11 @@ const axiosClient = axios.create({
     timeout: 5000,
     headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token') && localStorage.getItem('token')}`
     }
 });
+
+
 
 export default axiosClient;

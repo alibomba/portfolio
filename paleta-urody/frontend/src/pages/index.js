@@ -4,4 +4,8 @@ export { default as Contact } from './contact/Contact';
 export { default as Home } from './home/Home';
 export { Reservation, ReservationContext } from './reservation/Reservation';
 export { default as NotFound } from './notFound/NotFound';
-
+export { default as Login } from './login/Login';
+export { default as Messages } from './messages/Messages';
+export { default as Appointments } from './appointments/Appointments';
+export { default as Posts } from './posts/Posts';
+export { default as PostForm } from './postForm/PostForm';

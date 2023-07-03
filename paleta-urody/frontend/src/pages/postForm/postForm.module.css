@@ -1,0 +1,124 @@
+.main {
+    padding: 2em;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.heading {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.main__form {
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.form__fileLabel {
+    display: grid;
+    place-items: center;
+    font-size: 3rem;
+    color: var(--secondary);
+    border: 3px solid var(--secondary);
+    padding: .4em .8em;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.form__fileLabel__img {
+    width: 300px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    font-size: 2rem;
+}
+
+.form__input,
+.form__textarea {
+    font-size: inherit;
+    padding: .3em;
+    border: 3px solid var(--secondary);
+    resize: none;
+}
+
+.form__label {
+    font-weight: 500;
+}
+
+.form__error,
+.form__notification {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.form__error {
+    color: red;
+}
+
+.form__notification {
+    color: var(--primary);
+}
+
+.form__button {
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+
+@media(max-width:540px) {
+    .main {
+        padding: 1em;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .main__form {
+        gap: 1em;
+    }
+
+    .form__fileLabel {
+        font-size: 2rem;
+    }
+
+    .inputContainer,
+    .form__button {
+        font-size: 1.5rem;
+    }
+
+    .form__input,
+    .form__textarea {
+        width: 100%;
+    }
+
+    .form__error,
+    .form__notification {
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width:400px) {
+    .form__fileLabel {
+        font-size: 1.75rem;
+    }
+
+    .inputContainer,
+    .form__button {
+        font-size: 1.2rem;
+    }
+
+    .form__button {
+        border-radius: 7px;
+    }
+}

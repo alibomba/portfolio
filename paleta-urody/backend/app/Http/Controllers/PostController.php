@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Events\PostNotification;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
@@ -52,6 +53,12 @@ class PostController extends Controller
             'description' => $request['description'],
             'content' => $request['content']
         ];
+
+        try {
+            event(new PostNotification('Nowy post'));
+        } catch(Exception $e) {
+            return response(['error' => 'Coś poszło nie tak!'], 500);
+        }
 
         return Post::create($data);
     }

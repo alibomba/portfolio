@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Post;
+use App\Models\User;
+use App\Models\Email;
 use App\Models\Appointment;
 use Illuminate\Database\Seeder;
 
@@ -50,6 +52,57 @@ class DatabaseSeeder extends Seeder
             'phone_number' => '123123123',
             'email' => 'test@gmail.com',
             'date' => '2023-06-29 14:00:00'
+        ]);
+
+        Appointment::create([
+            'phone_number' => '123123123',
+            'email' => 'test@gmail.com',
+            'date' => '2023-06-29 13:00:00'
+        ]);
+
+        Appointment::create([
+            'phone_number' => '123123123',
+            'email' => 'test@gmail.com',
+            'date' => '2023-06-29 12:00:00'
+        ]);
+
+        Appointment::create([
+            'phone_number' => '123123123',
+            'email' => 'test@gmail.com',
+            'date' => '2023-06-29 11:00:00'
+        ]);
+
+        Appointment::create([
+            'phone_number' => '123123123',
+            'email' => 'test@gmail.com',
+            'date' => '2023-06-29 10:00:00'
+        ]);
+
+        Appointment::create([
+            'phone_number' => '123123123',
+            'email' => 'test@gmail.com',
+            'date' => '2023-06-29 09:00:00'
+        ]);
+
+        Appointment::create([
+            'phone_number' => '123123123',
+            'email' => 'test@gmail.com',
+            'date' => '2023-06-29 08:00:00'
+        ]);
+
+        Appointment::create([
+            'phone_number' => '123123123',
+            'email' => 'test@gmail.com',
+            'date' => '2023-06-29 07:00:00'
+        ]);
+
+        User::create([
+            'login' => 'administrator',
+            'password' => '$2a$10$Vyf8oyHtVzY5XCW4wyf.vurl2p1CYzkD2h8XFrnQQw.zJsu4xWs4G'
+        ]);
+
+        Email::create([
+            'email' => 'wojci.bro@gmail.com'
         ]);
     }
 }

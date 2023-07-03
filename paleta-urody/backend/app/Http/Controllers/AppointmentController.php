@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
 use DateTime;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
+use App\Mail\AppointmentNotification;
 
 class AppointmentController extends Controller
 {
+    public function index()
+    {
+        return Appointment::orderBy('date', 'asc')->paginate(10);
+    }
+
     public function getBusyHours($date)
     {
         $appointmentsThatDay = Appointment::whereDate('date', $date)->get();
@@ -74,6 +81,17 @@ class AppointmentController extends Controller
             'email' => $request['email'],
             'date' => $passedDate
         ];
+
+        try {
+            Mail::to($request['email'])->send(new AppointmentNotification([
+                'date' => $passedDate->format('d.m.Y H:i')
+            ]));
+        } catch(Exception $e) {
+            return response([
+                'error' => 'Coś poszło nie tak'
+            ], 500);
+        }
+
 
         return Appointment::create($data);
     }

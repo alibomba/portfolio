@@ -6,4 +6,4 @@ export { default as WhyUs } from './whyUs/WhyUs';
 export { default as Testimonials } from './testimonials/Testimonials';
 export { default as Footer } from './footer/Footer';
 export { default as PostHeader } from './postHeader/PostHeader';
-
+export { default as AdminNav } from './adminNav/AdminNav';
