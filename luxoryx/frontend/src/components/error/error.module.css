@@ -1,0 +1,19 @@
+.error {
+    font-size: 4rem;
+    color: white;
+    background-color: rgba(255, 0, 0, .7);
+    font-weight: bold;
+    padding: 1em;
+    width: fit-content;
+    margin: 3em auto;
+    border-radius: 50px;
+    text-align: center;
+}
+
+@media(max-width:550px) {
+    .error {
+        font-size: 3.2rem;
+        padding: .5em;
+        border-radius: 20px;
+    }
+}

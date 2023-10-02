@@ -1,0 +1,51 @@
+.testimonials {
+    padding: 3em 1.5em;
+    margin-top: 3em;
+    display: flex;
+    align-items: center;
+    gap: 4em;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.testimonials__button {
+    position: absolute;
+    border: none;
+    font-size: 4rem;
+    background-color: var(--secondary);
+    top: 70%;
+    display: grid;
+    place-items: center;
+    padding: .3em;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.testimonials__button:hover,
+.testimonials__button:focus {
+    background-color: var(--secondary-hover);
+}
+
+.testimonials__button_previous {
+    left: 0;
+}
+
+.testimonials__button_next {
+    right: 0;
+}
+
+@media(max-width:700px) {
+    .testimonials__button {
+        font-size: 3rem;
+        top: 80%;
+    }
+}
+
+@media(max-width:420px) {
+    .testimonials__button {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,24 @@
+.popup {
+    position: fixed;
+    right: 1.5em;
+    top: 1.5em;
+    font-size: 2rem;
+    padding: 1em;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    transform: translateX(200%);
+    transition: var(--transition);
+    z-index: 100000;
+}
+
+.popup_active {
+    transform: translateX(0);
+}
+
+@media(max-width:500px) {
+    .popup {
+        right: .25em;
+        top: .25em;
+    }
+}

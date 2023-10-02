@@ -1,0 +1,220 @@
+.googleMaps {
+    width: 100%;
+    border-block: 3px solid var(--secondary);
+}
+
+.form {
+    margin-top: 7em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+}
+
+.form__heading,
+.contact__heading,
+.faq__heading {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.form__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+    flex-wrap: wrap;
+}
+
+.form__input,
+.form__textarea {
+    border: 3px solid var(--secondary);
+    padding: .4em;
+    box-shadow: 5px 5px 5px 0px var(--secondary);
+    font-size: 1.75rem;
+}
+
+.form__input {
+    border-radius: 150px;
+}
+
+.form__textarea {
+    border-radius: 20px;
+    width: 70%;
+    resize: none;
+}
+
+.form__error {
+    color: red;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    max-width: 30ch;
+}
+
+.form__button {
+    font-size: 2rem;
+    padding: .3em 1em;
+    color: white;
+    background-color: var(--primary);
+    font-weight: bold;
+    border: none;
+    border-radius: 150px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.form__button:hover,
+.form__button:focus {
+    background-color: var(--primary-hover);
+}
+
+.contact {
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.contact__text {
+    font-size: 1.6rem;
+    max-width: 60ch;
+    text-align: center;
+    color: var(--black-65);
+    line-height: 1.6;
+}
+
+.contact__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    column-gap: 4em;
+    row-gap: 2em;
+}
+
+.contact__group {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: .75em;
+}
+
+.contact__group__heading {
+    font-size: 2rem;
+}
+
+.contact__group__text {
+    font-size: 1.6rem;
+    color: var(--black-65);
+    line-height: 1.4;
+}
+
+.contact__groupRow {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.contact__socialIcon {
+    font-size: 3rem;
+    color: var(--primary);
+}
+
+.faq {
+    margin-top: 5em;
+}
+
+.faq__heading {
+    margin-bottom: 2em;
+}
+
+.faq__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    column-gap: 2em;
+    row-gap: 4em;
+}
+
+.faq__article {
+    max-width: 70ch;
+}
+
+.article__heading {
+    font-size: 2rem;
+    margin-bottom: .7em;
+}
+
+.article__text {
+    font-size: 1.6rem;
+    color: var(--black-65);
+    line-height: 1.5;
+}
+
+.faq,
+.contact {
+    padding-inline: 2em;
+}
+
+@media(max-width:760px) {
+    .faq__grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media(max-width:600px) {
+    .contact__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form__input,
+    .form__textarea {
+        width: 100%;
+    }
+
+    .form__error {
+        font-size: 1.6rem;
+    }
+
+    .form__heading,
+    .contact__heading,
+    .faq__heading {
+        font-size: 2.3rem;
+    }
+
+    .contact__group__heading {
+        font-size: 1.8rem;
+    }
+
+    .article__heading {
+        font-size: 1.7rem;
+    }
+
+    .contact__text,
+    .article__text,
+    .contact__group__text {
+        font-size: 1.2rem;
+    }
+}
+
+@media(max-width:400px) {
+
+    .form__input,
+    .form__textarea {
+        font-size: 1.4rem;
+    }
+
+    .form__button {
+        font-size: 1.6rem;
+        width: 100%;
+    }
+
+    .contact,
+    .faq {
+        padding: .7em;
+    }
+}

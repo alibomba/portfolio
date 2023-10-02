@@ -1,0 +1,26 @@
+.group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    column-gap: 2em;
+    row-gap: 4em;
+    padding-inline: 3em;
+}
+
+@media(max-width:1410px) {
+    .group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:950px) {
+    .group {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:510px) {
+    .group {
+        padding-inline: 1.5em;
+    }
+}

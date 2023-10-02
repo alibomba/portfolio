@@ -1,0 +1,140 @@
+.main {
+    display: flex;
+    align-items: center;
+}
+
+.main__img {
+    width: 50%;
+    height: 100vh;
+    flex-basis: 50%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-block: 30%;
+}
+
+.main__form {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+.form__heading {
+    font-size: 3rem;
+    margin-bottom: .5em;
+    text-align: center;
+}
+
+.form__controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    width: fit-content;
+}
+
+.form__input,
+.form__button {
+    font-size: 2rem;
+}
+
+.form__inputContainer {
+    position: relative;
+    width: 100%;
+}
+
+.form__passwordToggle {
+    position: absolute;
+    right: .4em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.7rem;
+    display: grid;
+    place-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--secondary);
+}
+
+.form__input {
+    border: 3px solid var(--secondary);
+    padding: .4em;
+    border-radius: 150px;
+    box-shadow: 5px 5px 5px 0px var(--secondary);
+    width: 100%;
+}
+
+.form__input:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.form__error {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    max-width: 30ch;
+}
+
+.form__button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 150px;
+    padding: .4em .8em;
+    width: 100%;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.51);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.form__button:hover,
+.form__button:focus {
+    background-color: var(--primary-hover);
+}
+
+.form__link {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--black-65);
+}
+
+@media(max-width:900px) {
+    .main {
+        flex-direction: column-reverse;
+        gap: 1.5em;
+    }
+
+    .main__img {
+        width: 100%;
+        padding: 30%;
+    }
+}
+
+@media(max-width:470px) {
+    .form__heading {
+        font-size: 2.5rem;
+    }
+
+    .form__input,
+    .form__button {
+        font-size: 1.7rem;
+        width: 100%;
+    }
+
+    .form__passwordToggle {
+        font-size: 2.2rem;
+    }
+
+    .form__error {
+        font-size: 1.4rem;
+    }
+}

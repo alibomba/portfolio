@@ -1,0 +1,3 @@
+# Luxoryx
+
+Luxoryx to strona wymyślonego sklepu z luksusowymi zegarkami i biżuterią. Projekt graficzny był zrobiony przeze mnie w Figmie, frontend w React JS z Typescriptem i backend w NodeJS z Typescriptem z użyciem frameworku Express i do łączenia z bazą danych w PostgreSQL został użyty ORM Prisma. Strona ma funkcję logowania z uwierzytelnianiem JsonWebToken, koszyka, kupowania produktów, płatności za pomocą platformy Stripe oraz wyszukiwarkę produktów i wiele innych.

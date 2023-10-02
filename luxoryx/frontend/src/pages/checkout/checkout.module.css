@@ -1,0 +1,152 @@
+.main{
+    padding: 1em;
+}
+
+.main__heading{
+    font-size: 3rem;
+}
+
+.section{
+    margin-top: 3em;
+}
+
+.section__heading{
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+.section__grid{
+    margin-top: 1.5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1em;
+    row-gap: 2em;
+}
+
+.section__field{
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+    width: fit-content;
+}
+
+.section__label{
+    font-size: 1.65rem;
+    font-weight: bold;
+}
+
+.section__input{
+    font-size: 1.65rem;
+    border: 3px solid var(--secondary);
+    padding: .4em;
+    border-radius: 150px;
+    box-shadow: 5px 5px 5px 0px var(--secondary);
+    width: 100%;
+}
+
+.section__shippingField{
+    margin-top: 1.5em;
+}
+
+.section__shippingField__top{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+
+.section__price{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.section__expectedDate{
+    font-size: 1.3rem;
+    color: var(--black-65);
+}
+
+.section__radio{
+    scale: 1.5;
+}
+
+.section_discount{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.section_discount > .section__input{
+    width: 50%;
+}
+
+.form__button{
+    margin-top: 1.5em;
+    font-size: 2rem;
+    font-family: inherit;
+    background-color: var(--primary);
+    color: white;
+    font-weight: bold;
+    padding: .3em .8em;
+    border: none;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.6);
+    border-radius: 150px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.form__button:hover, .form__button:focus{
+    background-color: var(--primary-hover);
+}
+
+.form__error{
+    font-size: 2rem;
+    color: red;
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+@media(max-width: 600px){
+    .section__grid{
+        grid-template-columns: 1fr;
+    }
+
+    .section_discount{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section_discount > .section__input{
+        width: 100%;
+    }
+
+    .section__shippingField__top{
+        flex-wrap: wrap;
+    }
+    
+    .main__heading{
+        font-size: 2.5rem;
+    }
+
+    .section__heading{
+        font-size: 1.85rem;
+    }
+
+    .section__label, .section__input{
+        font-size: 1.4rem;
+    }
+
+    .section__price{
+        font-size: 1.3rem;
+    }
+
+    .section__expectedDate{
+        font-size: 1.1rem;
+    }
+
+    .form__button{
+        font-size: 1.7rem;
+    }
+
+    .form__error{
+        font-size: 1.5rem;
+    }
+}

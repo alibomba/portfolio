@@ -1,0 +1,73 @@
+.main {
+    position: relative;
+}
+
+.sidebar {
+    background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    padding: 3em 6em 3em 1em;
+    transform: translateX(-80%);
+    transition: var(--transition);
+    z-index: 500;
+}
+
+.sidebar_active {
+    transform: translateX(0);
+}
+
+.sidebar__toggle {
+    position: absolute;
+    top: .2em;
+    right: .2em;
+    font-size: 3rem;
+    display: grid;
+    place-items: center;
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.sidebar__toggle_active {
+    rotate: -180deg;
+}
+
+.sidebar__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    margin-top: 4em;
+}
+
+.sidebar__navLink {
+    font-size: 2rem;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    gap: .3em;
+    border: none;
+    background: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: left;
+}
+
+.navLink__icon {
+    font-size: 2.8rem;
+}
+
+@media(max-width:452px) {
+    .sidebar__navLink {
+        font-size: 1.5rem;
+    }
+
+    .navLink__icon {
+        font-size: 2.4rem;
+    }
+}

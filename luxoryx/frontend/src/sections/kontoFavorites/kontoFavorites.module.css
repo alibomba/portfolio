@@ -1,0 +1,120 @@
+.main {
+    padding: 1em;
+    padding-left: 7em;
+    min-height: 50em;
+}
+
+.main__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    column-gap: 2em;
+    row-gap: 4em;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    gap: 1em;
+    margin-top: 3em;
+}
+
+.pagination__button {
+    font-size: 3rem;
+    display: grid;
+    place-items: center;
+    padding: .3em;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--secondary);
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.pagination__button_disabled {
+    cursor: not-allowed;
+    background-color: gray;
+}
+
+.pagination__button:not(.pagination__button_disabled):hover,
+.pagination__button:not(.pagination__button_disabled):focus {
+    background-color: var(--secondary-hover);
+}
+
+.pagination__numbers {
+    position: relative;
+    min-width: 6em;
+    height: 5em;
+}
+
+.pagination__number {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.pagination__number_current {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.pagination__number_total {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+.pagination__line {
+    width: 2px;
+    height: 100%;
+    background-color: var(--black);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    rotate: 45deg;
+}
+
+.noResults {
+    font-size: 3rem;
+    color: white;
+    background-color: rgba(255, 0, 0, .7);
+    width: fit-content;
+    margin: 3em auto;
+    text-align: center;
+    padding: 1em;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
+@media(max-width:1030px) {
+    .main__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:550px) {
+    .main__productTile {
+        width: 100%;
+    }
+}
+
+@media(max-width:455px) {
+    .main {
+        padding-left: 6em;
+    }
+
+    .pagination {
+        gap: .1em;
+    }
+
+    .pagination__button {
+        font-size: 2rem;
+    }
+
+    .pagination__number {
+        font-size: 1.3rem;
+    }
+}

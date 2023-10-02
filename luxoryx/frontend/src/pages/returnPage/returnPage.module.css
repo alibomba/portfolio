@@ -1,0 +1,160 @@
+.main {
+    padding: 1em;
+}
+
+.main__heading {
+    font-size: 3rem;
+    margin-bottom: 1.5em;
+}
+
+.main__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2em;
+    margin-bottom: 3em;
+}
+
+.header__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2em;
+}
+
+.header__img {
+    width: 50%;
+    height: 27em;
+    object-fit: cover;
+    object-position: center;
+}
+
+.header__title {
+    font-size: 2.5rem;
+    max-width: 30ch;
+}
+
+.header__text {
+    font-size: 2rem;
+    color: var(--black-65);
+}
+
+.header__text:first-of-type {
+    text-transform: capitalize;
+}
+
+.main__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    margin-bottom: 2em;
+}
+
+.form__select,
+.form__textarea {
+    font-size: 2rem;
+    font-family: inherit;
+    padding: .4em;
+    border: 3px solid var(--secondary);
+    box-shadow: 5px 5px 5px 0px #36B7D9;
+}
+
+.form__textarea {
+    margin-top: 1em;
+    resize: none;
+    border-radius: 20px;
+}
+
+.form__error {
+    font-size: 2rem;
+    color: red;
+    text-align: center;
+    max-width: 40ch;
+}
+
+.form__button {
+    font-size: 2rem;
+    color: white;
+    font-family: inherit;
+    border: none;
+    padding: .3em .8em;
+    background-color: var(--primary);
+    font-weight: bold;
+    border-radius: 150px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.form__button:hover,
+.form__button:focus {
+    background-color: var(--primary-hover);
+}
+
+.address__heading {
+    font-size: 2.5rem;
+}
+
+.address__text {
+    font-size: 2rem;
+    color: var(--black-65);
+    margin-top: .5em;
+}
+
+@media(max-width:900px) {
+    .main__header {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .header__img {
+        width: 100%;
+    }
+
+    .header__right {
+        align-items: center;
+        text-align: center;
+    }
+
+    .form__textarea {
+        width: 100%;
+    }
+}
+
+@media(max-width:590px) {
+    .form__select {
+        width: 100%;
+    }
+}
+
+@media(max-width:470px) {
+    .main__heading {
+        font-size: 2.7rem;
+    }
+
+    .header__title {
+        font-size: 2.2rem;
+    }
+
+    .header__text {
+        font-size: 1.8rem;
+    }
+
+    .form__select,
+    .form__textarea,
+    .form__error,
+    .form__button {
+        font-size: 1.75rem;
+    }
+
+    .form__button {
+        width: 100%;
+    }
+
+    .address__heading {
+        font-size: 2.25rem;
+    }
+
+    .address__text {
+        font-size: 1.75rem;
+    }
+}

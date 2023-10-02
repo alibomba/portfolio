@@ -1,0 +1,231 @@
+.main {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 6em;
+    min-height: 50em;
+}
+
+.main__heading {
+    font-size: 3rem;
+    margin-bottom: 1.5em;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.section+.section {
+    margin-top: 6em;
+}
+
+.section__heading {
+    font-size: 2.4rem;
+    margin-bottom: .5em;
+}
+
+.section__field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 600px;
+    max-width: 100%;
+}
+
+.section__label {
+    font-size: 1.8rem;
+    color: var(--black-65);
+    font-weight: bold;
+}
+
+.section__field__right {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.section__imgLabel {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    cursor: pointer;
+}
+
+.section__imgLabel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 50%;
+}
+
+.section__imgLabel__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.section__imgLabel__icon {
+    font-size: 2.3rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 100;
+}
+
+.section__deletePfp {
+    font-size: 1.8rem;
+    color: rgba(255, 0, 0, .8);
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.section__value {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.section__arrow {
+    font-size: 2.5rem;
+    display: grid;
+    place-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.formModal {
+    position: fixed;
+    top: 3em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    max-width: 90%;
+    z-index: 1001;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    padding: 2em;
+    border-radius: 30px;
+}
+
+.formModal__heading,
+.formModal__input,
+.formModal__button {
+    font-size: 2rem;
+}
+
+.formModal__heading {
+    text-align: center;
+}
+
+.formModal__input {
+    border: 3px solid var(--secondary);
+    padding: .4em;
+    box-shadow: 5px 5px 5px 0px var(--secondary);
+    font-size: 1.75rem;
+    border-radius: 150px;
+    max-width: 100%;
+}
+
+.formModal__button {
+    color: white;
+    background-color: var(--primary);
+    cursor: pointer;
+    padding: .3em .8em;
+    font-weight: bold;
+    border: none;
+    border-radius: 150px;
+    transition: var(--transition);
+}
+
+.formModal__button:hover,
+.formModal__button:focus {
+    background-color: var(--primary-hover);
+}
+
+.formModal__error {
+    color: red;
+    font-weight: 500;
+    font-size: 1.7rem;
+    text-align: center;
+    max-width: 100%;
+}
+
+.formModalOverlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 1000;
+}
+
+@media(max-width:790px) {
+    .main__heading {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .section__heading {
+        text-align: center;
+        font-size: 1.9rem;
+    }
+
+    .section__label,
+    .section__value {
+        font-size: 1.5rem;
+    }
+
+    .section__arrow {
+        font-size: 2.2rem;
+    }
+
+    .section__field__right {
+        gap: .5em;
+    }
+
+    .section__field {
+        flex-direction: column;
+        gap: 1em;
+        width: auto;
+        max-width: none;
+    }
+}
+
+@media(max-width:450px) {
+    .section {
+        text-align: center;
+    }
+
+    .section__label,
+    .section__value {
+        font-size: 1.3rem;
+    }
+
+    .main__heading {
+        font-size: 2.25rem;
+    }
+
+    .section__heading {
+        font-size: 1.65rem;
+    }
+
+    .section__field__right {
+        flex-direction: column;
+    }
+
+    .formModal {
+        padding: 1em;
+    }
+}

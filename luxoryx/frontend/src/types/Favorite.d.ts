@@ -1,0 +1,3 @@
+type Favorite = {
+    product: ProductTile
+}

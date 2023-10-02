@@ -1,0 +1,132 @@
+.main {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10em;
+}
+
+.section__h1 {
+    font-size: 3.5rem;
+    max-width: 15ch;
+    line-height: 1.2;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.section__img {
+    width: 50%;
+    height: 25em;
+    object-fit: cover;
+    object-position: center;
+}
+
+.section__text {
+    font-size: 1.6rem;
+    max-width: 50ch;
+    flex-basis: 50%;
+    color: var(--black-65);
+    line-height: 1.7;
+}
+
+.section__text_alignRight {
+    text-align: right;
+}
+
+.section__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.section__heading {
+    font-size: 2.3rem;
+}
+
+.sectionGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2em;
+    row-gap: 4em;
+}
+
+.sectionGrid__article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+}
+
+.sectionGrid__articleHeading {
+    margin-bottom: .5em;
+    font-size: 2.3rem;
+}
+
+.sectionGrid__icon {
+    font-size: 5rem;
+    color: var(--primary);
+}
+
+.sectionGrid__text {
+    font-size: 1.6rem;
+    max-width: 45ch;
+    text-align: center;
+    color: var(--black-65);
+    line-height: 1.6;
+}
+
+@media(max-width:1000px) {
+    .section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section__text_alignRight {
+        text-align: center;
+    }
+
+    .section__img {
+        width: 100%;
+    }
+}
+
+@media(max-width:800px) {
+    .sectionGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:500px) {
+    .main {
+        padding: 1em;
+    }
+
+    .section__h1 {
+        font-size: 2.75rem;
+    }
+
+    .section__text {
+        font-size: 1.25rem;
+    }
+
+    .section__heading {
+        font-size: 1.9rem;
+    }
+
+    .sectionGrid__articleHeading {
+        font-size: 1.9rem;
+    }
+
+    .sectionGrid__text {
+        font-size: 1.25rem;
+    }
+
+    .sectionGrid__icon {
+        font-size: 4rem;
+    }
+}

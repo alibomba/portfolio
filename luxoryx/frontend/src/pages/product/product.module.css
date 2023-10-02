@@ -1,0 +1,631 @@
+.main {
+    padding: 1em;
+    padding-top: 3.5em;
+}
+
+.header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    width: 100%;
+}
+
+.header__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    width: 45%;
+    padding: .5em;
+}
+
+.header__thumbnail {
+    width: 95%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.header__images {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
+}
+
+.header__image {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+
+.header__image_active {
+    border: 5px solid var(--primary);
+}
+
+.header__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .8em;
+}
+
+.header__row {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    flex-wrap: wrap;
+}
+
+.header__title {
+    font-size: 2.6rem;
+}
+
+.header__blueButton {
+    all: unset;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    color: var(--secondary);
+}
+
+.header__blueButton_share {
+    font-size: 2.5rem;
+}
+
+.header__blueButton_like {
+    font-size: 3.1rem;
+}
+
+.header__category {
+    text-transform: capitalize;
+    font-size: 2.1rem;
+    color: var(--black-65);
+}
+
+.header__row_variants {
+    margin-block: .75em;
+}
+
+.header__variantButton {
+    font-size: 2rem;
+    padding: .25em .8em;
+    font-family: inherit;
+    background: none;
+    border: 3px solid var(--black);
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.header__variantButton_active {
+    background-color: var(--secondary);
+}
+
+.header__price {
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.header__oldPrice {
+    font-size: 1.9rem;
+    color: var(--black-65);
+    text-decoration: line-through;
+}
+
+.header__discountPercentage {
+    color: red;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 3px solid red;
+    border-radius: 10px;
+    padding: .1em .55em;
+}
+
+.header__counter,
+.header__stock {
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+.header__quantityButton {
+    all: unset;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.header__quantity,
+.header__quantityButton {
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+.header__quantityButton_disabled {
+    color: var(--black-65);
+    cursor: not-allowed;
+}
+
+.header__addToCart,
+.header__buyNow {
+    font-size: 2.3rem;
+    font-family: inherit;
+    width: 100%;
+    padding: .3em .8em;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 150px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.header__addToCart {
+    background-color: var(--secondary);
+}
+
+.header__buyNow {
+    background-color: var(--primary);
+}
+
+.header__addToCart:hover,
+.header__addToCart:focus {
+    background-color: var(--secondary-hover);
+}
+
+.header__buyNow:hover,
+.header__buyNow:focus {
+    background-color: var(--primary-hover);
+}
+
+.crossSell {
+    margin-block: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5em;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5em;
+    margin-left: 2.5em;
+    margin-block: 3em;
+}
+
+.navLink {
+    font-size: 2.5rem;
+    font-family: inherit;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.navLink_active {
+    color: var(--secondary);
+}
+
+.description {
+    font-size: 1.8rem;
+    color: var(--black-65);
+    line-height: 1.7;
+    padding: 1.5em;
+}
+
+.parameters {
+    padding: 2em;
+}
+
+.parameter {
+    font-size: 2.5rem;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, .2);
+    padding: .5em;
+    border-radius: 20px;
+}
+
+.parameter__key {
+    font-weight: bold;
+}
+
+.parameter__value {
+    color: var(--black-65);
+}
+
+.parameter+.parameter {
+    margin-top: 1em;
+}
+
+.commentForm {
+    margin-left: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    width: 70%;
+}
+
+.commentForm__input {
+    width: 100%;
+    font-size: 2rem;
+    padding: .4em;
+    font-family: inherit;
+    border: 3px solid var(--secondary);
+    border-radius: 150px;
+    box-shadow: 5px 5px 5px 0px var(--secondary);
+}
+
+.commentForm__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.commentForm__button {
+    font-size: 1.8rem;
+    color: white;
+    font-family: inherit;
+    font-weight: bold;
+    padding: .3em .8em;
+    background-color: var(--primary);
+    cursor: pointer;
+    border: none;
+    border-radius: 150px;
+    transition: var(--transition);
+}
+
+.commentForm__button:hover,
+.commentForm__button:focus {
+    background-color: var(--primary-hover);
+}
+
+.sorting {
+    margin-left: 2em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-block: 2.5em;
+    flex-wrap: wrap;
+}
+
+.sorting__select {
+    font-size: 2rem;
+    padding: .3em;
+    border: 3px solid var(--secondary);
+    box-shadow: 5px 5px 5px 0px var(--secondary);
+    font-family: inherit;
+}
+
+.sorting__icon {
+    font-size: 4rem;
+    color: var(--secondary);
+}
+
+.review {
+    width: 80%;
+    max-width: 900px;
+    margin-left: 2em;
+    padding: 1.5em;
+    border: 3px solid var(--primary);
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 0px #DAA520;
+}
+
+.review+.review {
+    margin-top: 3em;
+}
+
+.review__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.review__top__left {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.review__pfp {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.review__author,
+.review__date {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.review__content {
+    font-size: 1.8rem;
+    color: var(--black-65);
+    line-height: 1.5;
+    max-width: 70ch;
+    margin-bottom: 1em;
+}
+
+.review__bottom,
+.review__bottom__left,
+.review__likeContainer,
+.review__bottom__right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.review__bottom {
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.review__bottom__left,
+.review__bottom__right {
+    gap: 1em;
+}
+
+.review__likeContainer {
+    gap: .5em;
+}
+
+.review__likeContainer__button,
+.review__reportButton,
+.review__authorButton {
+    all: unset;
+    font-size: 2.5rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.review__likeContainer__button_like {
+    color: #42FF00;
+}
+
+.review__likeContainer__button_dislike,
+.review__authorButton_delete,
+.review__reportButton {
+    color: #FF0000;
+}
+
+.review__likeCount {
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+
+.review__authorButton_edit {
+    color: #00E0FF;
+}
+
+.showMore {
+    all: unset;
+    font-family: inherit;
+    font-size: 2rem;
+    margin-left: 2em;
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    gap: .3em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.noResults {
+    font-size: 3rem;
+    color: white;
+    background-color: rgba(255, 0, 0, .7);
+    width: fit-content;
+    margin: 3em auto;
+    text-align: center;
+    padding: 1em;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
+@media(max-width:1100px) {
+    .header {
+        flex-direction: column-reverse;
+    }
+
+    .header__title {
+        text-align: center;
+    }
+
+    .header__row {
+        justify-content: center;
+    }
+
+    .header__left {
+        width: 100%;
+    }
+
+    .header__right {
+        align-items: center;
+        width: 100%;
+    }
+
+    .header__addToCart,
+    .header__buyNow {
+        width: 80%;
+    }
+
+    .header__thumbnail {
+        height: 25em;
+    }
+}
+
+@media(max-width:780px) {
+    .commentForm {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .sorting {
+        margin-left: 0;
+    }
+}
+
+@media(max-width:600px) {
+
+    .header__addToCart,
+    .header__buyNow {
+        width: 100%;
+    }
+
+    .description {
+        font-size: 1.4rem;
+        padding: 1em;
+    }
+}
+
+@media(max-width:540px) {
+    .commentForm__input {
+        font-size: 1.7rem;
+    }
+
+    .commentForm__button {
+        font-size: 1.65rem;
+    }
+
+    .sorting__select {
+        font-size: 1.7rem;
+    }
+
+    .review {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .showMore {
+        font-size: 1.7rem;
+        margin-left: 0;
+    }
+
+}
+
+@media(max-width:470px) {
+    .header__thumbnail {
+        width: 100%;
+        height: 15em;
+    }
+
+    .header__image {
+        width: 85px;
+        height: 85px;
+    }
+
+    .header__title {
+        font-size: 2.2rem;
+    }
+
+    .header__blueButton_share {
+        font-size: 2.1rem;
+    }
+
+    .header__blueButton_like {
+        font-size: 2.7rem;
+    }
+
+    .header__category {
+        font-size: 1.8rem;
+    }
+
+    .header__variantButton {
+        font-size: 1.7rem;
+    }
+
+    .header__price {
+        font-size: 1.9rem;
+    }
+
+    .header__oldPrice {
+        font-size: 1.6rem;
+    }
+
+    .header__discountPercentage {
+        font-size: 1.7rem;
+    }
+
+    .header__counter,
+    .header__stock {
+        font-size: 2rem;
+    }
+
+    .header__quantityButton,
+    .header__quantity {
+        font-size: 2rem;
+    }
+
+    .header__addToCart,
+    .header__buyNow {
+        font-size: 1.9rem;
+    }
+
+    .nav {
+        margin-left: 1em;
+    }
+
+    .navLink {
+        font-size: 2.1rem;
+    }
+
+    .description {
+        font-size: 1.15rem;
+    }
+
+    .review__pfp {
+        width: 60px;
+        height: 60px;
+    }
+
+    .review__author,
+    .review__date {
+        font-size: 1.7rem;
+    }
+
+    .review__content {
+        font-size: 1.5rem;
+    }
+
+    .review__likeContainer__button,
+    .review__reportButton,
+    .review__authorButton {
+        font-size: 2rem;
+    }
+
+    .review__likeCount {
+        font-size: 1.65rem;
+    }
+}
+
+@media(max-width:400px) {
+    .main {
+        padding: .5em;
+    }
+
+    .sorting__select {
+        width: 100%;
+    }
+}

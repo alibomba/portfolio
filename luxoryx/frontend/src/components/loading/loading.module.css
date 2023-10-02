@@ -1,0 +1,12 @@
+.loading {
+    width: 20em;
+    margin-top: 15em;
+    display: block;
+    margin-inline: auto;
+}
+
+@media(max-width:630px) {
+    .loading {
+        width: 12em;
+    }
+}

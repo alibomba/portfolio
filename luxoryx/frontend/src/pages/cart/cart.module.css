@@ -1,0 +1,246 @@
+.main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3em;
+    padding: 1em;
+}
+
+.main__items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    width: 65%;
+    flex-basis: 65%;
+}
+
+.items__top {
+    margin-bottom: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.items__top__left {
+    display: flex;
+    align-items: center;
+    gap: .75em;
+    font-size: 2rem;
+}
+
+.items__top__checkbox {
+    scale: 2.5;
+}
+
+.items__top__select {
+    font-size: 2rem;
+    width: 3.3em;
+    color: red;
+    border: none;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    width: 100%;
+    padding: 1em;
+}
+
+.item__checkbox {
+    scale: 2.5;
+}
+
+.item__img {
+    width: 20%;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.item__title {
+    font-size: 2.5rem;
+    width: 35%;
+}
+
+.item__quantity {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.quantity__button,
+.item__deleteButton {
+    font-size: 2.3rem;
+    display: grid;
+    place-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.quantity__button {
+    color: inherit;
+}
+
+.quantity__button_disabled {
+    color: gray;
+    cursor: not-allowed;
+}
+
+.quantity__number,
+.item__price {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.item__deleteButton {
+    color: red;
+}
+
+.main__summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    flex-basis: 25%;
+    font-size: 1.8rem;
+    gap: 1em;
+    background-color: var(--primary);
+    padding: .7em;
+    border-radius: 30px;
+}
+
+.summary__row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.summary__text {
+    color: white;
+    font-weight: bold;
+}
+
+.summary__button {
+    background-color: var(--secondary);
+    color: white;
+    font-weight: bold;
+    font-size: inherit;
+    font-family: inherit;
+    border: none;
+    padding: .3em .8em;
+    border-radius: 150px;
+    width: 100%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.summary__button:hover,
+.summary__button:focus {
+    background-color: var(--secondary-hover);
+}
+
+.noResults {
+    font-size: 3rem;
+    color: white;
+    background-color: rgba(255, 0, 0, .7);
+    width: fit-content;
+    margin: 2em auto;
+    text-align: center;
+    padding: 1em;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
+@media(max-width:1190px) {
+    .main {
+        flex-direction: column-reverse;
+        padding: 2em;
+    }
+
+    .main__items {
+        width: 100%;
+    }
+
+    .main__summary {
+        width: 100%;
+    }
+}
+
+@media(max-width:990px) {
+    .item__title {
+        font-size: 1.9rem;
+    }
+
+    .quantity__number {
+        font-size: 1.7rem;
+    }
+
+    .quantity__button,
+    .item__deleteButton {
+        font-size: 1.8rem;
+    }
+
+    .item__price {
+        font-size: 1.7rem;
+    }
+
+    .item__checkbox {
+        scale: 2;
+    }
+}
+
+@media(max-width: 670px) {
+    .main__items {
+        gap: 4em;
+    }
+
+    .item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5em;
+    }
+
+    .item__img {
+        width: 90%;
+        height: 250px;
+    }
+
+    .item__title {
+        width: auto;
+    }
+}
+
+@media(max-width:500px) {
+    .main {
+        padding: 1em;
+    }
+
+    .item__img {
+        width: 100%;
+    }
+
+    .main__summary {
+        font-size: 1.6rem;
+    }
+
+    .summary__row {
+        flex-direction: column;
+        gap: .5em;
+    }
+
+    .items__top {
+        flex-direction: column;
+        gap: .5em;
+        text-align: center;
+    }
+
+    .items__top__left {
+        flex-direction: column;
+    }
+}
