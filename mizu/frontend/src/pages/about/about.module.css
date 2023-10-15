@@ -1,0 +1,155 @@
+.main {
+    padding: 2em;
+}
+
+.section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2em;
+    margin-bottom: 8em;
+}
+
+.section__content {
+    max-width: 50%;
+}
+
+.section__heading {
+    font-size: 3.3rem;
+    margin-bottom: .5em;
+}
+
+.section__text {
+    font-size: 1.8rem;
+    max-width: 50ch;
+    color: var(--black-65);
+    line-height: 1.7;
+}
+
+.section__img {
+    width: 50%;
+    height: 25em;
+    object-fit: cover;
+    object-position: center;
+}
+
+.team {
+    margin-bottom: 8em;
+}
+
+.team__heading {
+    font-size: 3.3rem;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.team__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    column-gap: 2em;
+    row-gap: 5.5em;
+}
+
+.team__person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: .5em;
+}
+
+.person__img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 3px solid var(--secondary);
+}
+
+.person__name {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.person__role {
+    font-size: 1.8rem;
+    max-width: 25ch;
+    line-height: 1.15;
+    color: var(--black-65);
+}
+
+.youtube {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.youtube__heading {
+    font-size: 3.3rem;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.youtube__iframe {
+    width: 90%;
+    height: 40em;
+    border-radius: 30px;
+    border: 5px solid var(--secondary);
+}
+
+@media(max-width:900px) {
+    .section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section__img {
+        width: 100%;
+    }
+
+    .section__content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .team__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:500px) {
+    .main {
+        padding: 1em;
+    }
+
+    .section__heading,
+    .team__heading,
+    .youtube__heading {
+        font-size: 2.8rem;
+    }
+
+    .section__img {
+        height: 19em;
+    }
+
+    .section__text,
+    .person__role {
+        font-size: 1.4rem;
+    }
+
+    .person__name {
+        font-size: 2.1rem;
+    }
+
+    .person__img {
+        width: 190px;
+        height: 190px;
+    }
+
+    .youtube__iframe {
+        height: 20em;
+    }
+}

@@ -1,0 +1,58 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id      String   @id @default(uuid())
+  image   String
+  title   String   @db.VarChar(25)
+  content String   @db.Text
+  date    DateTime @db.Date
+}
+
+model Advice {
+  id      String @id @default(uuid())
+  title   String @db.VarChar(35)
+  content String @db.Text
+}
+
+model NewsletterMember {
+  id        String   @id @default(uuid())
+  email     String   @unique @db.VarChar(55)
+  createdAt DateTime @default(now()) @db.Timestamptz()
+}
+
+model News {
+  id        String   @id @default(uuid())
+  image     String
+  title     String   @db.VarChar(25)
+  content   String   @db.Text
+  createdAt DateTime @default(now()) @db.Timestamptz()
+}
+
+model Fundraising {
+  id            String @id @default(uuid())
+  image         String
+  title         String @db.VarChar(45)
+  description   String @db.Text
+  currentAmount Float
+  targetAmount  Float
+}
+
+model ContactMessage {
+  id          String   @id @default(uuid())
+  fullName    String   @db.VarChar(255)
+  email       String   @db.VarChar(55)
+  phoneNumber String   @db.VarChar(30)
+  subject     String   @db.VarChar(255)
+  content     String   @db.Text
+  createdAt   DateTime @default(now()) @db.Timestamptz()
+}

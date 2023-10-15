@@ -1,0 +1,3 @@
+# Mizu
+
+Mizu to strona wymyślonej organizacji non-profit, zajmującej się ochroną środowiska. Posiada m.in. takie funkcje jak: wspieranie zbiórek i obserwowanie postępu ich celów, czytanie aktualności i przyszłych projektów organizacji, zapisanie się do newslettera, wysłanie wiadomości do centrum wsparcia itp. Projekt graficzny zrobiłem ja w Figmie. Frontend jest zrobiony w ReactJS, a backend (REST API) w NodeJS z frameworkiem Express i ORM Prisma do komunikowania się z bazą danych PostgreSQL.

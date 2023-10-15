@@ -1,0 +1,41 @@
+.section {
+    margin-top: 15em;
+}
+
+.section__heading {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.section__grid {
+    padding: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    width: 90%;
+    margin: 0 auto;
+    gap: 4em;
+}
+
+@media(max-width:900px) {
+    .section__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:500px) {
+    .section__heading {
+        font-size: 3rem;
+    }
+
+    .section__grid {
+        width: 100%;
+    }
+}
+
+@media(max-width:350px) {
+    .section__grid {
+        padding: 1em;
+    }
+}

@@ -1,0 +1,274 @@
+.fund {
+    padding: 4em 2em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+.fund__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: -1;
+}
+
+.fund__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+.fund__header_mobile {
+    display: none;
+}
+
+.fund__arrow {
+    font-size: 4rem;
+    display: grid;
+    place-items: center;
+    border: none;
+    background: none;
+    color: var(--secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.fund__arrow:hover,
+.fund__arrow:focus {
+    color: var(--secondary-hover);
+}
+
+.fund__title {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+
+.fund__main {
+    margin-top: 2em;
+}
+
+.fund__progress__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .5em;
+}
+
+.fund__progress__number {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.fund__progress__bar {
+    height: 30px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.fund__progress__currentBar {
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: 10px;
+}
+
+.fund__data {
+    margin-top: 1.5em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.fund__description {
+    width: 40%;
+    color: white;
+    font-size: 1.7rem;
+    line-height: 1.5;
+    background-color: var(--black-65);
+    padding: .5em;
+}
+
+.fund__data__right,
+.fund__data__group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fund__data__right {
+    gap: 1em;
+}
+
+.fund__data__group {
+    gap: .5em;
+}
+
+.group__heading {
+    font-size: 2.3rem;
+    color: white;
+    font-weight: 500;
+}
+
+.group__row {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.group__shareButton {
+    font-size: 2.5rem;
+    display: grid;
+    place-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.group__facebook {
+    color: #0866FF;
+}
+
+.group__x,
+.group__link {
+    color: white;
+}
+
+.group__input,
+.group__button {
+    font-size: 2rem;
+    width: 70%;
+    border-radius: 10px;
+}
+
+.group__input {
+    background-color: rgba(246, 135, 18, .79);
+    border: 3px solid var(--secondary);
+    padding: .3em;
+    color: var(--black-65);
+}
+
+.group__button {
+    color: white;
+    font-weight: bold;
+    border: none;
+    background-color: var(--secondary);
+    padding: .3em .8em;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.group__button:hover,
+.group__button:focus {
+    background-color: var(--secondary-hover);
+}
+
+.content {
+    padding: 2em;
+    margin-top: 2em;
+}
+
+.content__heading {
+    font-size: 3.3rem;
+}
+
+.content__text {
+    font-size: 1.8rem;
+    margin-top: 1em;
+    color: var(--black-65);
+    line-height: 1.7;
+    max-width: 80ch;
+}
+
+@media(max-width:950px) {
+    .fund__data {
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+    }
+
+    .fund__description {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media(max-width:580px) {
+    .fund__title {
+        font-size: 2rem;
+    }
+
+    .fund__arrow {
+        font-size: 3rem;
+    }
+
+    .fund__progress__number {
+        font-size: 1.6rem;
+    }
+
+    .fund__description {
+        font-size: 1.5rem;
+    }
+
+    .group__heading {
+        font-size: 1.9rem;
+    }
+
+    .group__shareButton {
+        font-size: 2.2rem;
+    }
+
+    .group__input,
+    .group__button {
+        font-size: 1.7rem;
+        width: 100%;
+    }
+
+    .content__heading {
+        font-size: 2.7rem;
+    }
+
+    .content__text {
+        font-size: 1.4rem;
+    }
+}
+
+@media(max-width:480px) {
+    .fund__header_mobile {
+        display: block;
+    }
+
+    .fund__header {
+        display: none;
+    }
+
+    .fund__header_mobile__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2em;
+        margin-top: 1em;
+    }
+
+    .content {
+        padding: 1em;
+    }
+}
+
+@media(max-width:380px) {
+    .fund {
+        padding: 3em 1em;
+    }
+
+    .content__heading {
+        font-size: 2.3rem;
+    }
+
+    .content__text {
+        font-size: 1.1rem;
+    }
+}

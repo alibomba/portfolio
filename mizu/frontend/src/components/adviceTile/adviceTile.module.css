@@ -1,0 +1,27 @@
+.advice {
+    width: 100%;
+    padding: 1.4em;
+    color: white;
+    border-radius: 30px;
+}
+
+.advice__heading {
+    font-size: 3rem;
+    margin-bottom: .3em;
+}
+
+.advice__text {
+    font-size: 1.8rem;
+    max-width: 70ch;
+    line-height: 1.4;
+}
+
+@media(max-width:700px) {
+    .advice__heading {
+        font-size: 2.5rem;
+    }
+
+    .advice__text {
+        font-size: 1.4rem;
+    }
+}
