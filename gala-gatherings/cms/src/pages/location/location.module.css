@@ -1,0 +1,40 @@
+.form {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2em;
+}
+
+.form__imgLabel {
+    display: grid;
+    place-items: center;
+    font-size: 4.5rem;
+    color: var(--primary);
+    padding: .3em;
+    border: 3px solid var(--primary);
+    cursor: pointer;
+}
+
+.form__imgLabel__img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.form__error {
+    font-size: 2.5rem;
+    color: red;
+    font-weight: 500;
+}
+
+@media(max-width:500px) {
+    .form {
+        padding: 1em;
+    }
+
+    .form__error {
+        font-size: 1.8rem;
+    }
+}

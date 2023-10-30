@@ -1,0 +1,90 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id       String @id @default(uuid())
+  login    String @unique
+  password String
+}
+
+model RefreshToken {
+  id       String   @id @default(uuid())
+  token    String   @unique
+  issuedAt DateTime @default(now()) @db.Timestamptz()
+}
+
+model Reservation {
+  id      String   @id @default(uuid())
+  service String   @db.VarChar(255)
+  price   Int
+  date    DateTime
+}
+
+model Service {
+  id            String         @id @default(uuid())
+  image         String
+  title         String         @db.VarChar(50)
+  description   String         @db.VarChar(255)
+  price         String         @db.VarChar(20)
+  FeaturedOffer FeaturedOffer?
+}
+
+model FeaturedOffer {
+  id        String  @id @default(uuid())
+  serviceId String  @unique
+  service   Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+}
+
+model PortfolioProject {
+  id      String                  @id @default(uuid())
+  images  PortfolioProjectImage[]
+  title   String                  @db.VarChar(25)
+  content String                  @db.Text
+  date    DateTime                @db.Timestamptz()
+}
+
+model PortfolioProjectImage {
+  id                 String           @id @default(uuid())
+  url                String
+  portfolioProjectId String
+  portfolioProject   PortfolioProject @relation(fields: [portfolioProjectId], references: [id], onDelete: Cascade)
+}
+
+model Location {
+  id       String @id @default(uuid())
+  image    String
+  name     String @db.VarChar(100)
+  standard Int
+}
+
+model JobApplication {
+  id          String   @id @default(uuid())
+  firstName   String   @db.VarChar(100)
+  lastName    String   @db.VarChar(100)
+  email       String   @db.VarChar(55)
+  phoneNumber String   @db.VarChar(30)
+  jobPosition String   @db.VarChar(255)
+  cvUrl       String?
+  details     String?
+  sentAt      DateTime @default(now()) @db.Timestamptz()
+}
+
+model ContactMessage {
+  id          String  @id @default(uuid())
+  fullName    String  @db.VarChar(200)
+  companyName String? @db.VarChar(255)
+  email       String  @db.VarChar(55)
+  phoneNumber String  @db.VarChar(30)
+  subject     String  @db.VarChar(255)
+  details     String  @db.Text
+  opened      Boolean @default(false)
+}

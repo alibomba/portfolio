@@ -1,0 +1,25 @@
+.testimonials {
+    margin-top: 5em;
+    padding: 2em;
+}
+
+.testimonials__heading {
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.testimonials__row {
+    margin-top: 8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 3em;
+    row-gap: 8em;
+}
+
+@media(max-width:460px) {
+    .testimonials {
+        padding: 1em;
+    }
+}

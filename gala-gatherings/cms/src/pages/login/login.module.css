@@ -1,0 +1,75 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5em;
+    margin-top: 6em;
+    font-size: 2.5rem;
+    padding: .5em;
+}
+
+.form__input,
+.form__button {
+    font-size: inherit;
+}
+
+.form__inputContainer {
+    position: relative;
+}
+
+.form__input {
+    border: 3px solid var(--primary);
+    padding: .3em;
+}
+
+.form__passwordToggle {
+    all: unset;
+    display: grid;
+    place-items: center;
+    font-size: 2.9rem;
+    position: absolute;
+    right: .25em;
+    top: .43em;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+.form__error {
+    color: red;
+    font-weight: 500;
+}
+
+.form__button {
+    background-color: var(--primary);
+    color: white;
+    font-weight: bold;
+    padding: .3em 1em;
+    border: none;
+    border-radius: 150px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.form__button:hover,
+.form__button:focus {
+    background-color: var(--primary-hover);
+}
+
+@media(max-width:430px) {
+    .form {
+        font-size: 1.8rem;
+    }
+
+    .form__passwordToggle {
+        top: .36em;
+        font-size: 2.4rem;
+    }
+
+
+    .form__input,
+    .form__inputContainer,
+    .form__button {
+        width: 100%;
+    }
+}

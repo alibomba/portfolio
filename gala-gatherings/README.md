@@ -1,0 +1,4 @@
+# Gala Gatherings
+
+Gala Gatherings to wymyślona firma organizująca wydarzenia specjalnie takie jak wesela, imprezy urodzinowe, imprezy firmowe itp. Jest to strona internetowa tej firmy wraz z autorskim systemem zarządzania treścią (CMS). Login do niego to admin, a hasło to qwerty123. Na stronie wylistowane są usługi firmy, wydarzenia z przeszłości widoczne jako portfolio, lokacje wydarzeń, a to wszystko możliwe do zedytowania od strony panelu administracyjnego. Jest również możliwość aplikowania o pracę poprzez stronę lub wysłanie zapytania lub zamówienia przez formularz kontaktowy, który też znajduje się na stronie. Projekt graficzny został zrobiony przez mnie w Figmie, frontend strony w ReactJS, a backend w NodeJS z frameworkiem ExpressJS i bazą danych w PostgreSQL. ORM(Object Relational Mapper) użyty w tej aplikacji to Prisma. Jest również dodana funkcjonalność "caching" po stronie backendu za pomocą technologii Redis.
+

@@ -1,0 +1,60 @@
+.message {
+    width: 100%;
+    padding: 1em;
+    border: 3px solid var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.message_unread::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    top: 5px;
+    right: 5px;
+}
+
+.message__author {
+    font-size: 3rem;
+}
+
+.message__subject {
+    font-size: 2.3rem;
+    color: var(--black-65);
+    font-weight: 500;
+}
+
+.message__link {
+    all: unset;
+    font-size: 2.5rem;
+    padding: .3em .8em;
+    border: 3px solid var(--primary);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+@media(max-width:500px) {
+    .message_unread::after {
+        width: 15px;
+        height: 15px;
+    }
+
+    .message__author {
+        font-size: 2.5rem;
+    }
+
+    .message__subject {
+        font-size: 1.8rem;
+    }
+
+    .message__link {
+        font-size: 2rem;
+    }
+}

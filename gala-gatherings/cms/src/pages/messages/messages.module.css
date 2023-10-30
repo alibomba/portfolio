@@ -1,0 +1,45 @@
+.main {
+    padding: 2em;
+}
+
+.main__messages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    margin-block: 1.5em;
+}
+
+.main__showMore {
+    all: unset;
+    font-size: 2.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.main__noResults {
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(255, 0, 0, .5);
+    padding: 2em;
+    border-radius: 20px;
+    text-align: center;
+}
+
+@media(max-width:500px) {
+    .main {
+        padding: 1em;
+    }
+
+    .main__showMore {
+        font-size: 2rem;
+    }
+
+    .main__noResults {
+        font-size: 2rem;
+    }
+}

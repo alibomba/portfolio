@@ -1,0 +1,44 @@
+.section {
+    margin-top: 5em;
+    text-align: center;
+    padding: 2em;
+}
+
+.section__heading {
+    font-size: 3.5rem;
+    margin-bottom: .35em;
+}
+
+.section__dateContainer {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+.section__date {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.section__remaining {
+    font-size: 1.8rem;
+    color: var(--black-65);
+    font-weight: 500;
+}
+
+@media(max-width:500px) {
+    .section__heading {
+        font-size: 3rem;
+    }
+
+    .section__date {
+        font-size: 3rem;
+    }
+
+    .section__remaining {
+        font-size: 1.4rem;
+    }
+}

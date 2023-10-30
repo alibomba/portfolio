@@ -1,0 +1,44 @@
+.application {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 1em;
+    border: 3px solid var(--primary);
+}
+
+.application__author {
+    font-size: 3rem;
+}
+
+.application__position {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--black-65);
+}
+
+.application__link {
+    all: unset;
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding: .3em .8em;
+    border: 3px solid var(--primary);
+    cursor: pointer;
+}
+
+@media(max-width:600px) {
+    .application {
+        gap: 1.3em;
+    }
+
+    .application__author {
+        font-size: 2.3rem;
+    }
+
+    .application__position,
+    .application__link {
+        font-size: 1.8rem;
+    }
+}

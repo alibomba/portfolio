@@ -1,0 +1,50 @@
+.main {
+    padding: 2em;
+}
+
+.main__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.main__reservations {
+    margin-top: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.main__showMore {
+    all: unset;
+    font-size: 2.4rem;
+    font-weight: 500;
+    display: block;
+    margin-top: 1em;
+    width: fit-content;
+    margin-inline: auto;
+    cursor: pointer;
+}
+
+.main__noResults {
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(255, 0, 0, .5);
+    padding: 2em;
+    border-radius: 20px;
+    text-align: center;
+}
+
+@media(max-width:500px) {
+    .main {
+        padding: 1em;
+    }
+
+    .main__noResults {
+        font-size: 2rem;
+    }
+}

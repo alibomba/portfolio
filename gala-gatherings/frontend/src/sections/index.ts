@@ -1,0 +1,10 @@
+export { default as Header } from './header/Header';
+export { default as HomeHero } from './homeHero/HomeHero';
+export { default as HomeServices } from './homeServices/HomeServices';
+export { default as NearestDate } from './nearestDate/NearestDate';
+export { default as Testimonials } from './testimonials/Testimonials';
+export { default as Awards } from './awards/Awards';
+export { default as CommonSection } from './commonSection/CommonSection';
+export { default as FeaturedOffers } from './featuredOffers/FeaturedOffers';
+export { default as Footer } from './footer/Footer';
+export { default as AplikujHero } from './aplikujHero/AplikujHero';

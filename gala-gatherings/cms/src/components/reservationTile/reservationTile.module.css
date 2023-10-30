@@ -1,0 +1,61 @@
+.reservation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 1em;
+    border: 3px solid var(--primary);
+}
+
+.reservation__name {
+    font-size: 2.5rem;
+}
+
+.reservation__price {
+    font-size: 2.2rem;
+    color: var(--black-65);
+}
+
+.reservation__date {
+    font-size: 2rem;
+}
+
+.reservation__button {
+    all: unset;
+    font-size: 2.7rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.reservation__edit {
+    color: #0057FF;
+}
+
+.reservation__delete {
+    color: red;
+}
+
+@media(max-width:500px) {
+    .reservation {
+        text-align: center;
+    }
+
+    .reservation__name {
+        font-size: 2rem;
+    }
+
+    .reservation__price {
+        font-size: 1.7rem;
+    }
+
+    .reservation__date {
+        text-decoration-style: 1.5rem;
+    }
+
+    .reservation__button {
+        font-size: 2.2rem;
+    }
+}

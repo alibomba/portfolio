@@ -1,0 +1,35 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3em;
+    gap: 1.5em;
+}
+
+.pagination__button {
+    all: unset;
+    display: grid;
+    place-items: center;
+    font-size: 4.5rem;
+    cursor: pointer;
+}
+
+.pagination__button_disabled {
+    cursor: not-allowed;
+    color: var(--black-65);
+}
+
+.pagination__text {
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
+@media(max-width:500px) {
+    .pagination__button {
+        font-size: 3.5rem;
+    }
+
+    .pagination__text {
+        font-size: 2.7rem;
+    }
+}

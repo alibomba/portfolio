@@ -1,0 +1,3 @@
+type FeaturedOffer = {
+    service: Service
+}

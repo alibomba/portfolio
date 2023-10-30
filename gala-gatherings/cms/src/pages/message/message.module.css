@@ -1,0 +1,44 @@
+.main {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+    text-align: center;
+}
+
+.main__author {
+    font-size: 4rem;
+}
+
+.main__subText {
+    font-size: 2rem;
+    color: var(--black-65);
+    font-weight: 500;
+}
+
+.main__text {
+    margin-top: 1em;
+    font-size: 2.4rem;
+    line-height: 1.7;
+    color: var(--black-65);
+    max-width: 80ch;
+}
+
+@media(max-width:600px) {
+    .main {
+        padding: 1em;
+    }
+
+    .main__author {
+        font-size: 3rem;
+    }
+
+    .main__subText {
+        font-size: 1.6rem;
+    }
+
+    .main__text {
+        font-size: 1.7rem;
+    }
+}
