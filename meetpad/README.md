@@ -1,3 +1,0 @@
-# Meetpad
-Meetpad to mój pierwszy projekt w PHP wykonany w wakacje 2022. Jest to sieć społecznościowa. Projekt wizualnie nie jest najwyższych lotów, aczkolwiek myślę, że swoją funkcjonalnością zasługuje na znalezienie się w portfolio. Posiada funkcje takie jak dodawanie do znajomych, wyświetlanie profilów użytkowników, wyszukiwanie użytkowników i postów, czy też sprawdzanie 
-wspólnych znajomych. Jest tutaj również implementacja logowania i rejestracji wraz z dwuetapową weryfikacją przez pocztę elektroniczną. Strona wykonana w HTML, CSS, JavaScripcie, PHP i MySQL.
