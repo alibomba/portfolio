@@ -1,0 +1,169 @@
+.form {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2em;
+}
+
+.form__input {
+    width: fit-content;
+    border-radius: 150px;
+}
+
+.form__select,
+.form__textarea {
+    font-size: 2rem;
+    background-color: var(--primary-light);
+    border: 3px solid var(--secondary);
+    padding: .3em;
+}
+
+.form__select {
+    border-radius: 150px;
+}
+
+.form__textarea {
+    resize: none;
+    border-radius: 20px;
+}
+
+.form__section,
+.form__column,
+.form__listSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form__section {
+    gap: 2em;
+}
+
+.form__listSection {
+    gap: .5em;
+}
+
+.form__column {
+    gap: 1em;
+}
+
+.form__heading {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.form__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    height: 15em;
+    overflow-y: scroll;
+    align-items: center;
+    max-width: 100%;
+}
+
+.form__technology {
+    all: unset;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: .3em .8em;
+    color: var(--black);
+    background-color: var(--secondary);
+    border-radius: 150px;
+    transition: background-color 200ms ease;
+    font-weight: 500;
+    text-align: center;
+}
+
+.form__technology_active {
+    border: 3px solid var(--black-65);
+}
+
+.form__technology:hover {
+    background-color: var(--secondary-hover);
+}
+
+.form__addButton {
+    all: unset;
+    cursor: pointer;
+    color: white;
+    background-color: var(--primary);
+    display: grid;
+    place-items: center;
+    padding: .2em;
+    font-size: 2.3rem;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.form__addButton:hover {
+    background-color: var(--primary-hover);
+}
+
+.form__row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .7em;
+}
+
+.form__number {
+    font-size: 2rem;
+    width: 2em;
+    height: 2em;
+    background-color: var(--secondary);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: 500;
+    border-radius: 50%;
+}
+
+.form__button {
+    all: unset;
+    background-color: var(--primary);
+    color: white;
+    padding: .3em .8em;
+    border-radius: 150px;
+    font-size: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.form__button:hover {
+    background-color: var(--primary-hover);
+}
+
+@media(max-width:600px) {
+    .form {
+        padding: 1em;
+    }
+
+    .form__textarea {
+        width: 100%;
+    }
+}
+
+@media(max-width:510px) {
+
+    .form__select,
+    .form__textarea,
+    .form__button,
+    .form__technology {
+        font-size: 1.7rem;
+    }
+
+    .form__heading {
+        font-size: 2rem;
+    }
+}
+
+@media(max-width:415px) {
+
+    .form__input,
+    .form__select {
+        width: 100%;
+    }
+}

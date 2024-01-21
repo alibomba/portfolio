@@ -1,0 +1,59 @@
+.application {
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: .5em;
+    background-color: var(--primary-light);
+    border-radius: 30px;
+    border: 3px solid var(--secondary);
+}
+
+.application__name {
+    font-size: 3rem;
+}
+
+.application__email {
+    font-size: 2rem;
+    color: var(--black-65);
+}
+
+.application__offerTitle {
+    font-size: 2.3rem;
+    font-weight: 500;
+}
+
+.application__button {
+    all: unset;
+    cursor: pointer;
+    font-size: 2rem;
+    background-color: var(--secondary);
+    padding: .3em .8em;
+    font-weight: 500;
+    border-radius: 150px;
+    transition: var(--transition);
+}
+
+.application__button:hover {
+    background-color: var(--secondary-hover);
+}
+
+@media(max-width:920px) {
+    .application {
+        padding: 1em;
+    }
+
+    .application__name {
+        font-size: 2.5rem;
+    }
+
+    .application__email,
+    .application__button {
+        font-size: 1.5rem;
+    }
+
+    .application__offerTitle {
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,34 @@
+.section {
+    margin-top: 3em;
+}
+
+.section__heading {
+    font-size: 3rem;
+    margin-bottom: .5em;
+}
+
+.section__list {
+    padding-left: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: .8em;
+}
+
+.section__listItem {
+    font-size: 1.8rem;
+    color: var(--black-65);
+}
+
+.section__listItem::marker {
+    color: var(--secondary);
+}
+
+@media(max-width: 560px) {
+    .section__heading {
+        font-size: 2.5rem;
+    }
+
+    .section__listItem {
+        font-size: 1.3rem;
+    }
+}

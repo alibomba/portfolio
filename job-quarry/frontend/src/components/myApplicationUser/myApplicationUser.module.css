@@ -1,0 +1,126 @@
+.application {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 1em 2em;
+    background-color: var(--primary-light);
+    border: 3px solid var(--secondary);
+    border-radius: 25px;
+}
+
+.application__img {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 150px;
+    border: 3px solid var(--black-65);
+}
+
+.application__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.application__title {
+    font-size: 3rem;
+}
+
+.application__row,
+.application__info__bottom {
+    display: flex;
+    align-items: center;
+}
+
+.application__row {
+    gap: .3em;
+}
+
+.application__info__bottom {
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.application__dollar {
+    font-size: 3rem;
+    color: var(--secondary);
+}
+
+.application__salary,
+.application__status,
+.application__button {
+    font-size: 2.3rem;
+}
+
+.application__status>span {
+    font-weight: 500;
+}
+
+.application__salary {
+    font-weight: 500;
+}
+
+.application__button {
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary);
+    font-weight: 500;
+    padding: .3em .8em;
+    border-radius: 150px;
+    transition: var(--transition);
+}
+
+.application__button:hover {
+    background-color: var(--primary-hover);
+}
+
+@media(max-width:730px) {
+    .application {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .application__info {
+        align-items: center;
+    }
+
+    .application__info__bottom {
+        justify-content: center;
+    }
+}
+
+@media(max-width:560px) {
+
+    .application,
+    .application__info {
+        gap: .5em;
+    }
+
+    .application__img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .application__title {
+        font-size: 2.5rem;
+    }
+
+    .application__salary,
+    .application__button,
+    .application__status {
+        font-size: 1.8rem;
+    }
+
+    .application__dollar {
+        font-size: 2.5rem;
+    }
+}
+
+@media(max-width:420px) {
+    .application {
+        padding: 1em;
+    }
+}

@@ -1,0 +1,81 @@
+.main {
+    padding: 2em;
+}
+
+.main__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .3em;
+}
+
+.header__offerTitle {
+    font-size: 3rem;
+}
+
+.header__bold {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.header__subtitle {
+    font-size: 2rem;
+    color: var(--black-65);
+}
+
+.header__row,
+.main__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+    margin-block: 1em;
+}
+
+.header__label {
+    display: flex;
+    align-items: center;
+    gap: .4em;
+    font-size: 2.3rem;
+    color: var(--black-65);
+    font-weight: 500;
+}
+
+.header__radio {
+    scale: 2;
+    accent-color: var(--secondary);
+}
+
+.main__button {
+    all: unset;
+    cursor: pointer;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: .3em;
+    text-align: center;
+    font-size: 2.3rem;
+    color: white;
+    font-weight: 500;
+    background-color: var(--primary);
+    padding: .3em .8em;
+    border-radius: 150px;
+    transition: var(--transition);
+}
+
+.main__button:hover {
+    background-color: var(--primary-hover);
+}
+
+.main__description {
+    font-size: 2rem;
+    margin-block: 1em;
+    text-align: center;
+    color: var(--black-65);
+    line-height: 1.6;
+}
+
+.main__button_offerLink {
+    margin-inline: auto;
+}

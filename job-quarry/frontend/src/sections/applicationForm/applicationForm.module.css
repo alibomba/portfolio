@@ -1,0 +1,103 @@
+.section {
+    margin-top: 3em;
+}
+
+.section__heading {
+    font-size: 3rem;
+    margin-bottom: .5em;
+}
+
+.section__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.form__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.form__input,
+.form__textarea {
+    font-size: 2rem;
+    padding: .3em;
+    background-color: var(--primary-light);
+    border: 3px solid var(--secondary);
+}
+
+.form__input {
+    width: 15em;
+    border-radius: 150px;
+}
+
+.form__textarea {
+    border-radius: 20px;
+    resize: none;
+}
+
+.form__fileLabel {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    cursor: pointer;
+}
+
+.fileLabel__icon {
+    font-size: 3rem;
+    color: var(--primary);
+}
+
+.fileLabel__text {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.form__button {
+    font-size: 2rem;
+    padding: .3em .8em;
+    color: white;
+    border: none;
+    background-color: var(--primary);
+    border-radius: 150px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.form__button:hover {
+    background-color: var(--primary-hover);
+}
+
+@media(max-width:1020px) {
+    .form__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:600px) {
+
+    .form__input,
+    .form__textarea,
+    .form__button,
+    .fileLabel__text {
+        font-size: 1.5rem;
+    }
+
+    .fileLabel__icon {
+        font-size: 2.5rem;
+    }
+}
+
+@media(max-width:440px) {
+    .form__grid {
+        width: 100%;
+    }
+
+    .form__input,
+    .form__textarea {
+        width: 100%;
+    }
+}

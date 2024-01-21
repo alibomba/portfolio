@@ -1,0 +1,28 @@
+.section {
+    margin-top: 3em;
+}
+
+.section__heading {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.section__list {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+@media(max-width:550px) {
+    .section__heading {
+        font-size: 2.2rem;
+    }
+}
+
+@media(max-width:300px) {
+    .section__heading {
+        font-size: 2rem;
+    }
+}

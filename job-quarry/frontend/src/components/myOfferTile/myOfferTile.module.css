@@ -1,0 +1,123 @@
+.offer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    padding: 2em 1em;
+    background-color: var(--primary-light);
+    border: 3px solid var(--secondary);
+    border-radius: 25px;
+    width: 100%;
+}
+
+.offer__left,
+.offer__right {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.offer__left {
+    align-items: flex-start;
+}
+
+.offer__right {
+    align-items: center;
+}
+
+.offer__title {
+    font-size: 3rem;
+}
+
+.offer__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.info__item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: .25em;
+    font-size: 2rem;
+    color: var(--black-65);
+    font-weight: 500;
+}
+
+.info__icon {
+    color: var(--secondary);
+    font-size: 2.5rem;
+}
+
+.offer__button {
+    all: unset;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--black-65);
+    background-color: var(--secondary);
+    padding: .3em .8em;
+    font-weight: 500;
+    border-radius: 150px;
+    transition: var(--transition);
+}
+
+.offer__button:hover {
+    background-color: var(--secondary-hover);
+}
+
+.offer__button_delete {
+    background-color: red;
+    color: white;
+}
+
+.offer__button_delete:hover {
+    background-color: #EE0000;
+}
+
+@media(max-width:800px) {
+    .offer {
+        flex-direction: column;
+        gap: 2em;
+        text-align: center;
+    }
+
+    .offer__left {
+        align-items: center;
+    }
+
+    .offer__right {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media(max-width:580px) {
+    .offer__title {
+        font-size: 2.5rem;
+    }
+
+    .info__item {
+        font-size: 1.5rem;
+    }
+
+    .info__icon {
+        font-size: 2rem;
+    }
+
+    .offer__button {
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width:500px) {
+    .offer__info {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .info__item {
+        text-align: center;
+    }
+}

@@ -1,0 +1,147 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+    padding: 1em 2em;
+    z-index: 10000;
+}
+
+.header__logo {
+    width: 190px;
+}
+
+.header_mobile__top {
+    display: none;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    background-color: white;
+}
+
+.header__navLink {
+    font-size: 2rem;
+    font-weight: 500;
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.header__navLink:hover,
+.header__navLink:focus {
+    opacity: .7;
+}
+
+.header__navIcon {
+    all: unset;
+    display: grid;
+    place-items: center;
+    font-size: 2.5rem;
+    color: var(--primary);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.header__navIcon:hover,
+.header__navIcon:focus {
+    color: var(--primary-hover);
+}
+
+.header__navIcon_unread::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: red;
+    top: -3px;
+    right: 0;
+}
+
+.header__navButton {
+    all: unset;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: white;
+    background-color: var(--primary);
+    padding: .3em .8em;
+    border-radius: 150px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.header__navButton:hover,
+.header__navButton:focus {
+    background-color: var(--primary-hover);
+}
+
+@media(max-width:840px) {
+    .header_mobile__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5em;
+        width: 100%;
+    }
+
+    .header__singleLogo {
+        display: none;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .header__nav {
+        position: absolute;
+        flex-direction: column;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 2em 1.5em;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: var(--transition);
+    }
+
+    .header__hamburger {
+        font-size: 3.8rem;
+        transition: var(--transition);
+    }
+
+    .header__hamburger_active {
+        rotate: -90deg;
+    }
+
+    .header__nav_active {
+        transform: scaleY(1);
+    }
+}
+
+@media(max-width:360px) {
+    .header__logo {
+        width: 150px;
+    }
+
+    .header__navIcon {
+        font-size: 1.6rem;
+    }
+
+    .header__navIcon_unread::after {
+        width: 10px;
+        height: 10px;
+    }
+
+    .header__navButton {
+        font-size: 1.4rem;
+    }
+
+    .header__hamburger {
+        font-size: 3.4rem;
+    }
+}

@@ -1,0 +1,172 @@
+.main {
+    padding: 2em;
+}
+
+.main__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.header__column {
+    display: flex;
+    flex-direction: column;
+}
+
+.header__logo {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 3px solid var(--black-65);
+}
+
+.header__companyName {
+    font-size: 2.5rem;
+    color: var(--black-65);
+    font-weight: 500;
+}
+
+.header__title {
+    font-size: 3.5rem;
+}
+
+.header__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.header__bookmark {
+    all: unset;
+    display: grid;
+    place-items: center;
+    font-size: 4rem;
+    cursor: pointer;
+    color: var(--secondary);
+    transition: var(--transition);
+}
+
+.header__bookmark:hover {
+    color: var(--secondary-hover);
+}
+
+.header__button {
+    font-size: 2.5rem;
+    color: white;
+    background-color: var(--primary);
+    font-weight: 500;
+    padding: .3em .8em;
+    border: none;
+    border-radius: 150px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.header__button:hover {
+    background-color: var(--primary-hover);
+}
+
+.main__main {
+    margin-top: 3em;
+}
+
+.main__description {
+    margin-top: 3em;
+}
+
+.description__heading {
+    font-size: 3rem;
+    margin-bottom: .5em;
+}
+
+.description__content {
+    font-size: 2rem;
+    line-height: 1.6;
+    color: var(--black-65);
+}
+
+@media(max-width:850px) {
+    .header__title {
+        font-size: 3rem;
+    }
+
+    .header__companyName {
+        font-size: 2rem;
+    }
+
+    .header__logo {
+        width: 170px;
+        height: 170px;
+    }
+
+    .header__bookmark {
+        font-size: 3rem;
+    }
+
+    .header__button {
+        font-size: 2rem;
+    }
+}
+
+@media(max-width: 680px) {
+    .main__header {
+        justify-content: center;
+    }
+
+    .header__left {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 1em;
+    }
+}
+
+@media(max-width:560px) {
+    .description__heading {
+        font-size: 2.5rem;
+    }
+
+    .description__content {
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width: 520px) {
+    .main {
+        padding: 1em;
+    }
+}
+
+@media(max-width:410px) {
+    .header__title {
+        font-size: 2.5rem;
+    }
+
+    .header__companyName {
+        font-size: 1.5rem;
+    }
+
+    .header__logo {
+        width: 130px;
+        height: 130px;
+    }
+
+    .header__bookmark {
+        font-size: 2.7rem;
+    }
+
+    .header__button {
+        font-size: 1.5rem;
+    }
+}

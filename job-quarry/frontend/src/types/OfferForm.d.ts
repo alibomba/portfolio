@@ -1,0 +1,17 @@
+type OfferForm = {
+    title: string,
+    mode: string,
+    location: string,
+    level: string,
+    expiresAt: string,
+    contractType: string,
+    salary: string,
+    requiredTechnologies: string[],
+    optionalTechnologies: string[],
+    description: string,
+    tasks: string[],
+    required: string[],
+    optional: string[],
+    benefits: string[],
+    recruitmentStages: string[],
+}

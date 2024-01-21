@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    /* colors */
+    --primary: #C700EB;
+    --primary-hover: #B600DA;
+    --primary-light: rgb(235, 166, 248);
+    --secondary: #00EBA3;
+    --secondary-hover: #00DA92;
+    --black: #170C18;
+    --black-65: rgba(23, 12, 24, .65);
+    --gradient: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+
+    /* font */
+    --font: 'Rubik', sans-serif;
+
+    /* transition */
+    --transition: all 200ms ease;
+}
+
+body {
+    font-family: var(--font);
+    color: var(--black);
+}
+
+a,
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}

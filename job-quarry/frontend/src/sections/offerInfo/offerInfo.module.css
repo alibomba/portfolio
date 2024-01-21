@@ -1,0 +1,30 @@
+.section__heading {
+    font-size: 3rem;
+    margin-bottom: .5em;
+}
+
+.section__info {
+    font-size: 2rem;
+}
+
+.section__info+.section__info {
+    margin-top: .5em;
+}
+
+.info__key {
+    font-weight: 500;
+}
+
+.info__value {
+    color: var(--black-65);
+}
+
+@media(max-width:560px) {
+    .section__heading {
+        font-size: 2.5rem;
+    }
+
+    .section__info {
+        font-size: 1.5rem;
+    }
+}

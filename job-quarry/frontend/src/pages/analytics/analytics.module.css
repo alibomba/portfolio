@@ -1,0 +1,52 @@
+.main {
+    padding: 2em;
+}
+
+.main__row,
+.main__column,
+.main {
+    display: flex;
+}
+
+.main__row {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.main__column,
+.main {
+    flex-direction: column;
+}
+
+.main__column {
+    gap: .5em;
+}
+
+.main {
+    gap: 2em;
+}
+
+.main__input {
+    border-radius: 150px;
+}
+
+.main__label {
+    font-weight: 500;
+}
+
+.main__paragraph,
+.main__label {
+    font-size: 2.5rem;
+}
+
+@media(max-width:500px) {
+    .main {
+        padding: 1em;
+    }
+
+    .main__paragraph,
+    .main__label {
+        font-size: 2rem;
+    }
+}

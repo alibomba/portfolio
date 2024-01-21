@@ -1,0 +1,30 @@
+.main {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.main__noResults {
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(255, 0, 0, .7);
+    width: 80%;
+    text-align: center;
+    margin: 1.5em auto;
+    padding: 1em;
+    border-radius: 30px;
+}
+
+@media(max-width:560px) {
+    .main {
+        padding: 1em;
+    }
+
+    .main__noResults {
+        font-size: 2rem;
+        width: 95%;
+    }
+}

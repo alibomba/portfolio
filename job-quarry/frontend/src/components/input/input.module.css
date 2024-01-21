@@ -1,0 +1,15 @@
+.input {
+    font-size: 2rem;
+    width: 100%;
+    padding: .3em;
+    background-color: var(--primary-light);
+    border: 3px solid var(--secondary);
+    border-radius: 12px;
+    color: var(--black);
+}
+
+@media(max-width:510px) {
+    .input {
+        font-size: 1.7rem;
+    }
+}

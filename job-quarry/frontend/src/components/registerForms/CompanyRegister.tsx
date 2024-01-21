@@ -1,0 +1,142 @@
+import { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { COMPANY_REGISTER } from '../../graphql/mutations';
+import Input from '../input/Input';
+import Popup from '../popup/Popup';
+import Error from '../error/Error';
+import styles from './registerForm.module.css';
+import { GraphQLErrors } from '@apollo/client/errors';
+
+interface RegisterData {
+    email: string;
+    companyName: string;
+    password: string;
+    passwordConfirmation: string;
+}
+
+const CompanyRegister = () => {
+    const [registerData, setRegisterData] = useState<RegisterData>({ email: '', companyName: '', password: '', passwordConfirmation: '' });
+    const [validationError, setValidationError] = useState<string | null>(null);
+    const [error, setError] = useState<string | null>(null);
+    const [popup, setPopup] = useState<Popup>({ content: null, active: false, type: 'good' });
+    const [registerMutation] = useMutation(COMPANY_REGISTER);
+
+
+    function changeData(e: React.ChangeEvent) {
+        const input = e.target as HTMLInputElement;
+        const id = input.id;
+
+        switch (id) {
+            case 'email':
+                setRegisterData(prev => ({ ...prev, email: input.value }));
+                break;
+            case 'companyName':
+                setRegisterData(prev => ({ ...prev, companyName: input.value }));
+                break;
+            case 'password':
+                setRegisterData(prev => ({ ...prev, password: input.value }));
+                break;
+            case 'passwordConfirmation':
+                setRegisterData(prev => ({ ...prev, passwordConfirmation: input.value }));
+                break;
+        }
+    }
+
+    async function register(e: React.FormEvent) {
+        e.preventDefault();
+        if (registerData.password !== registerData.passwordConfirmation) {
+            setValidationError('Hasła nie są identyczne');
+            return;
+        }
+
+        try {
+            await registerMutation({
+                variables: {
+                    companyRegisterInput: {
+                        email: registerData.email,
+                        password: registerData.password,
+                        companyName: registerData.companyName
+                    }
+                }
+            });
+            setValidationError(null);
+            setRegisterData({ email: '', companyName: '', password: '', passwordConfirmation: '' });
+            setPopup({ content: 'Zarejestrowano', active: true, type: 'good' });
+            setTimeout(() => setPopup(prev => ({ ...prev, active: false })), 4000);
+        } catch (err: any) {
+            const error = err.graphQLErrors[0] as GraphQLErrors[0];
+            if (error.extensions.code === 'VALIDATION_ERROR') {
+                setValidationError(error.message);
+            }
+            else {
+                setError('Coś poszło nie tak, spróbuj ponownie później...');
+            }
+        }
+    }
+
+    if (error) {
+        return <Error>{error}</Error>
+    }
+
+    return (
+        <form onSubmit={register} className={styles.form}>
+            <div className={styles.form__container}>
+                <label htmlFor="email" className={styles.form__label}>E-mail</label>
+                <Input
+                    id='email'
+                    placeholder='johndoe@gmail.com'
+                    type='email'
+                    maxLength={40}
+                    required
+                    value={registerData.email}
+                    onChange={changeData}
+                />
+            </div>
+            <div className={styles.form__container}>
+                <label htmlFor="companyName" className={styles.form__label}>Nazwa firmy</label>
+                <Input
+                    id='companyName'
+                    placeholder='Google sp.z.o.o'
+                    type='text'
+                    maxLength={30}
+                    required
+                    value={registerData.companyName}
+                    onChange={changeData}
+                />
+            </div>
+            <div className={styles.form__container}>
+                <label htmlFor="password" className={styles.form__label}>Hasło</label>
+                <Input
+                    id='password'
+                    placeholder='Twoje hasło'
+                    type='password'
+                    minLength={8}
+                    maxLength={60}
+                    required
+                    value={registerData.password}
+                    onChange={changeData}
+                />
+            </div>
+            <div className={styles.form__container}>
+                <label htmlFor="passwordConfirmation" className={styles.form__label}>Powtórz hasło</label>
+                <Input
+                    id='passwordConfirmation'
+                    placeholder='Twoje hasło'
+                    type='password'
+                    minLength={8}
+                    maxLength={60}
+                    required
+                    value={registerData.passwordConfirmation}
+                    onChange={changeData}
+                />
+            </div>
+            <button className={styles.form__button}>Zarejestruj się</button>
+            {
+                validationError && <p role='alert' aria-live='assertive' className={styles.form__error}>{validationError}</p>
+            }
+            <Popup active={popup.active} type={popup.type}>{popup.content}</Popup>
+        </form>
+    )
+}
+
+export default CompanyRegister

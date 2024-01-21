@@ -1,0 +1,168 @@
+.form {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.form__button {
+    all: unset;
+    cursor: pointer;
+    color: white;
+    background-color: var(--primary);
+    padding: .3em .8em;
+    font-size: 2rem;
+    font-weight: 500;
+    border-radius: 150px;
+    transition: var(--transition);
+}
+
+.form__button:hover {
+    background-color: var(--primary-hover);
+}
+
+.form__input {
+    width: 12em;
+    border-radius: 150px;
+}
+
+.form__textarea {
+    font-size: 2rem;
+    padding: .3em;
+    background-color: var(--primary-light);
+    border: 3px solid var(--secondary);
+    border-radius: 20px;
+    resize: none;
+}
+
+.form__fileLabel,
+.form__fileLabelImg {
+    cursor: pointer;
+}
+
+.form__fileLabel {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.fileLabel__icon {
+    font-size: 4rem;
+    color: var(--primary);
+}
+
+.fileLabel__text {
+    font-size: 2rem;
+}
+
+.fileLabel__img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 150px;
+    border: 3px solid var(--black-65);
+}
+
+.form__row {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.form__section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5em;
+}
+
+.section__heading {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.form__addButton {
+    all: unset;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 1.7rem;
+    padding: .5em;
+    color: white;
+    background-color: var(--primary);
+    border-radius: 150px;
+    transition: var(--transition);
+}
+
+.form__addButton:hover {
+    background-color: var(--primary-hover);
+}
+
+.section__column,
+.section__experience {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.section__column {
+    gap: 1.5em;
+}
+
+.section__experience {
+    gap: 1em;
+    padding-block: 2em;
+    border-bottom: 3px solid var(--black);
+}
+
+.form__checkbox {
+    scale: 2.5;
+    margin-left: 1em;
+    accent-color: var(--primary);
+}
+
+@media(max-width:600px) {
+    .form {
+        padding: 1em;
+    }
+
+    .form__textarea {
+        width: 100%;
+    }
+}
+
+@media(max-width:510px) {
+
+    .form__textarea,
+    .form__button,
+    .form__addButton {
+        font-size: 1.7rem;
+    }
+
+    .form__checkbox {
+        scale: 2.3;
+        margin-left: .5em;
+    }
+
+    .section__heading {
+        font-size: 2.5rem;
+    }
+}
+
+@media(max-width:356px) {
+    .form__fileLabel {
+        gap: .5em;
+    }
+
+    .form__input {
+        width: 100%;
+    }
+
+    .section__heading {
+        font-size: 2.2rem;
+    }
+}

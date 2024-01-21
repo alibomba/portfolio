@@ -1,0 +1,16 @@
+.chartContainer {
+    padding: 1.2em;
+    width: 25em;
+}
+
+@media(max-width:440px) {
+    .chartContainer {
+        width: 20em;
+    }
+}
+
+@media(max-width:340px) {
+    .chartContainer {
+        width: 15em;
+    }
+}
