@@ -1,0 +1,1535 @@
+openapi: 3.0.0
+info:
+  title: Substantia REST API
+  version: 1.0.0
+  description: REST API for Substantia - a subscription-based social media web application.
+
+securityDefinitions:
+  JwtAuth:
+    type: apiKey
+    in: header
+    name: Authorization
+    description: JWT token obtained during user login
+
+paths:
+  /api/register:
+    post:
+      summary: User registration
+      parameters:
+        - name: email
+          in: body
+          type: string
+          required: true
+        - name: username
+          in: body
+          type: string
+          required: true
+        - name: slug
+          in: body
+          type: string
+          required: true
+        - name: password
+          in: body
+          type: string
+          required: true
+      responses:
+        201:
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  email:
+                    type: string
+                  username:
+                    type: string
+                  slug:
+                    type: string
+                  oAuth:
+                    type: boolean
+                  hasChannel:
+                    type: boolean
+                  subscriptionPrice:
+                    type: number
+                    nullable: true
+                  avatar:
+                    type: string
+                    nullable: true
+                  banner:
+                    type: string
+                    nullable: true
+                  profileVideo:
+                    type: string
+                    nullable: true
+                  facebook:
+                    type: string
+                    nullable: true
+                  instagram:
+                    type: string
+                    nullable: true
+                  twitter:
+                    type: string
+                    nullable: true
+                  description:
+                    type: string
+                    nullable: true
+                  createdAt:
+                    type: string
+        422:
+          description: Validation error, duplicate e-mail or duplicate slug
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/login:
+    post:
+      summary: User login
+      parameters:
+        - name: email
+          in: body
+          type: string
+          required: true
+        - name: password
+          in: body
+          type: string
+          required: true
+      responses:
+        200:
+          description: User logged in successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+                  refreshToken:
+                    type: string
+                  payload:
+                    $ref: "#/definitions/UserPayload"
+        401:
+          description: Incorrect e-mail or password
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/auth:
+    get:
+      summary: Check if a user is authorized and get their payload
+      security:
+        - JwtAuth: []
+      responses:
+        200:
+          description: User is authorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/UserPayload"
+        401:
+          description: User is not authorized or a user does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/refresh:
+    post:
+      summary: Get a new access token if your old one expired
+      parameters:
+        - name: refreshToken
+          in: body
+          type: string
+          required: true
+      responses:
+        200:
+          description: Token refreshed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+        401:
+          description: Refresh token incorrect
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/logout:
+    post:
+      summary: User logout
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: refreshToken
+          in: body
+          type: string
+          required: true
+      responses:
+        204:
+          description: User logged out successfully
+        401:
+          description: User unauthorized or a refresh token is incorrect
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/google-login:
+    post:
+      summary: User login with Google
+      parameters:
+        - name: token
+          in: body
+          type: string
+          required: true
+      responses:
+        200:
+          description: User logged in successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+                  refreshToken:
+                    type: string
+                  payload:
+                    $ref: "#/definitions/UserPayload"
+        201:
+          description: User registered successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+                  refreshToken:
+                    type: string
+                  payload:
+                    $ref: "#/definitions/UserPayload"
+        401:
+          description: No token was given
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        422:
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/password-reset:
+    post:
+      summary: Request to reset a user's password
+      parameters:
+        - name: email
+          in: body
+          type: string
+          required: true
+      responses:
+        204:
+          description: Password reset token was created and a reset URL sent to the user via e-mail
+        422:
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/password-reset/{token}:
+    post:
+      summary: Resets a user's password
+      parameters:
+        - name: token
+          in: path
+          type: string
+          required: true
+        - name: newPassword
+          in: body
+          type: string
+          required: true
+      responses:
+        204:
+          description: Password was updated successfully
+        401:
+          description: Token incorrect or user does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        422:
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/posts:
+    post:
+      summary: Creates a new post
+      security:
+        - JwtAuth: []
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: content
+          in: formData
+          required: true
+          type: string
+        - name: images
+          in: formData
+          required: false
+          type: array
+          items:
+            type: file
+        - name: video
+          in: formData
+          required: false
+          type: file
+        - name: poll
+          in: formData
+          required: false
+          type: string
+      responses:
+        201:
+          description: Post was created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Post"
+        401:
+          description: Token incorrect or user does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User does not have a channel
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        422:
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/search:
+    get:
+      summary: Search profiles by phrase
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: phrase
+          in: query
+          required: true
+          type: string
+      responses:
+        200:
+          description: Empty array or array of profiles is returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  avatar:
+                    type: string
+                    nullable: true
+                  username:
+                    type: string
+                  slug:
+                    type: string
+                  description:
+                    type: string
+        401:
+          description: Token incorrect or user does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        422:
+          description: No phrase was given
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/create-channel:
+    post:
+      summary: Create channel for the logged in user
+      security:
+        - JwtAuth: []
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: banner
+          in: formData
+          required: true
+          type: file
+        - name: profileVideo
+          in: formData
+          required: true
+          type: file
+        - name: description
+          in: formData
+          required: true
+          type: string
+        - name: subscriptionPrice
+          in: formData
+          required: true
+          type: string
+      responses:
+        204:
+          description: Channel created successfully
+        401:
+          description: Token incorrect or user does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        422:
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/subscribe/{id}:
+    post:
+      summary: Get Stripe checkout session url to subscribe to the given profile
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Stripe checkout session url was generated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  url:
+                    type: string
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        404:
+          description: Given user does not exist or does not have a channel
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        422:
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/profile-preview/{id}:
+    get:
+      summary: Get profile preview of a given user
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Profile preview is returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  profile:
+                    $ref: "#/definitions/ProfilePreview"
+                  isSubscribed:
+                    type: boolean
+        404:
+          description: Profile was not found or a given user does not have a channel
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/unsubscribe/{id}:
+    delete:
+      summary: Unsubscribe the given profile
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        204:
+          description: Unsubscribed successfully
+        404:
+          description: Given user does not exist or does not have a channel
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        422:
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/profile-stats/{id}:
+    get:
+      summary: Get profile's posts, likes and subscription counts
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Stats were retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  posts:
+                    type: string
+                  likes:
+                    type: string
+                  subscriptions:
+                    type: string
+        404:
+          description: Given user does not exist or does not have a channel
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/update-avatar:
+    put:
+      summary: Update user's avatar
+      security:
+        - JwtAuth: []
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: avatar
+          in: formData
+          required: true
+          type: file
+      responses:
+        204:
+          description: Avatar was updated successfully
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        422:
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/update-banner:
+    put:
+      summary: Update user's banner
+      security:
+        - JwtAuth: []
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: banner
+          in: formData
+          required: true
+          type: file
+      responses:
+        204:
+          description: Banner was updated successfully
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User has no channel
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        422:
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/update-profile-video:
+    put:
+      summary: Update user's profile video
+      security:
+        - JwtAuth: []
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: profileVideo
+          in: formData
+          required: true
+          type: file
+      responses:
+        204:
+          description: Profile video was updated successfully
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User has no channel
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        422:
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/my-settings:
+    get:
+      summary: Get user's settings object
+      security:
+        - JwtAuth: []
+      responses:
+        200:
+          description: Settings were retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  avatar:
+                    type: string
+                    nullable: true
+                  banner:
+                    type: string
+                    nullable: true
+                  hasChannel:
+                    type: boolean
+                  username:
+                    type: string
+                  slug:
+                    type: string
+                  facebook:
+                    type: string
+                    nullable: true
+                  instagram:
+                    type: string
+                    nullable: true
+                  twitter:
+                    type: string
+                    nullable: true
+                  description:
+                    type: string
+                    nullable: true
+                  email:
+                    type: string
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"  
+  /api/update-settings:
+    put:
+      summary: Update user's settings
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: username
+          in: body
+          required: false
+          type: string
+        - name: slug
+          in: body
+          required: false
+          type: string
+        - name: facebook
+          in: body
+          required: false
+          type: string
+        - name: instagram
+          in: body
+          required: false
+          type: string
+        - name: twitter
+          in: body
+          required: false
+          type: string
+        - name: description
+          in: body
+          required: false
+          type: string
+        - name: email
+          in: body
+          required: false
+          type: string
+        - name: password
+          in: body
+          required: false
+          type: string
+        - name: oldPassword
+          in: body
+          required: false
+          type: string
+      responses:
+        204:
+          description: Settings were updated successfully
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        422:
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/check-oauth:
+    get:
+      summary: Check if a logged in user has an oAuth account
+      security:
+        - JwtAuth: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  hasOAuth:
+                    type: boolean
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/feed:
+    get:
+      summary: Get user's posts feed
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: page
+          in: query
+          required: false
+          type: number
+      responses:
+        200:
+          description: User's paginated feed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  currentPage:
+                    type: number
+                  lastPage:
+                    type: number
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/definitions/Post"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/vote/{id}:
+    post:
+      summary: Vote on a specified option in the poll associated to a post
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Vote was successful        
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    percentage:
+                      type: number
+        404:
+          description: User or poll option was not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User is not subscribed to the given profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/poll-votes/{id}:
+    get:
+      summary: Get selected option and percentages of the post poll
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Votes were retrieved correctly
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  selectedOption:
+                    type: string
+                    nullable: true
+                  percentages:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        percentage:
+                          type: number
+        404:
+          description: Post poll does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User is not subscribed to the poll owner
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/post-stats/{id}:
+    get:
+      summary: Get post stats and check if the logged in user likes it or has it in bookmarks
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Post stats and other information were retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  stats:
+                    type: object
+                    properties:
+                      likes:
+                        type: number
+                      comments:
+                        type: number
+                  isLiked:
+                    type: boolean
+                  isBookmarked:
+                    type: boolean
+        404:
+          description: Post does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User is not subscribed to the post owner
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/like-post/{id}:
+    post:
+      summary: Toggle like of the specified post
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        201:
+          description: Like was added to the post
+        204:
+          description: Like was deleted from the post
+        404:
+          description: Post does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User is not subscribed to the post owner
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/bookmark-post/{id}:
+    post:
+      summary: Toggle bookmark of the specified post
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        201:
+          description: The post was bookmarked
+        204:
+          description: The post was unbookmarked
+        404:
+          description: Post does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User is not subscribed to the post owner
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/my-bookmarks:
+    get:
+      summary: Get bookmarked posts of the logged in user
+      security:
+        - JwtAuth: []
+      responses:
+        200:
+          description: Array of user's bookmarked posts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/definitions/Post"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/user-posts/{id}:
+    get:
+      summary: Get paginated posts of the specified user
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: page
+          in: query
+          required: false
+          type: number
+      responses:
+        200:
+          description: User's paginated posts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  currentPage:
+                    type: number
+                  lastPage:
+                    type: number
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/definitions/Post"
+        404:
+          description: Profile does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User is not subscribed to the profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/post-comments/{id}:
+    get:
+      summary: Get paginated comments associated to the specified post
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: page
+          in: query
+          required: false
+          type: number
+      responses:
+        200:
+          description: Post's paginated comments
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  currentPage:
+                    type: number
+                  lastPage:
+                    type: number
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/definitions/Comment"
+        404:
+          description: Post does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User is not subscribed to the post owner
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/comment-stats/{id}:
+    get:
+      summary: Get comment stats and check if the logged in user has liked it
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Stats were retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  stats:
+                    type: object
+                    properties:
+                      likes:
+                        type: number
+                      replies:
+                        type: number
+                  isLiked:
+                    type: boolean
+        404:
+          description: Comment does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User is not subscribed to the profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/like-comment/{id}:
+    post:
+      summary: Toggle like of the specified comment
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        201:
+          description: Like was added to the comment
+        204:
+          description: Like was deleted from the comment
+        404:
+          description: Comment does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User is not subscribed to the profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/comment-replies/{id}:
+    get:
+      summary: Get comment's replies
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Array of comment's replies
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/definitions/CommentReply"
+        404:
+          description: Comment does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User is not subscribed to the profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+    post:
+      summary: Add a reply to the specified comment
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: content
+          in: body
+          required: true
+          type: string
+      responses:
+        201:
+          description: Reply was added successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/CommentReply"
+        422:
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        404:
+          description: Comment does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User is not subscribed to the profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/like-reply/{id}:
+    post:
+      summary: Toggle like of the specified comment reply
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        201:
+          description: Like was added to the comment reply
+        204:
+          description: Like was deleted from the comment reply
+        404:
+          description: Comment does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User is not subscribed to the profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+  /api/comments/{id}:
+    post:
+      summary: Add a comment to the specified post
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: content
+          in: body
+          required: true
+          type: string
+      responses:
+        201:
+          description: Comment was added successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Comment"
+        422:
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        404:
+          description: Post does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User is not subscribed to the profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"    
+  /api/is-reply-liked/{id}:
+    get:
+      summary: Check if the logged in user liked the specified comment reply
+      security:
+        - JwtAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Information was retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  isLiked:
+                    type: boolean
+        404:
+          description: Comment reply does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        403:
+          description: User is not subscribed to the profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"
+        401:
+          description: User is unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/Error"    
+
+
+
+
+definitions:
+  Error:
+    type: object
+    properties:
+      message:
+        type: string
+  UserPayload:
+    type: object
+    properties:
+      id:
+        type: string
+      email:
+        type: string
+      username:
+        type: string
+      avatar:
+        type: string
+        nullable: true
+      slug:
+        type: string
+      hasChannel:
+        type: boolean
+  Post:
+    type: object
+    properties:
+      id:
+        type: string
+      content:
+        type: string
+      videoPath:
+        type: string
+        nullable: true
+      userId:
+        type: string
+      images:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+            path:
+              type: string
+            postId:
+              type: string
+            createdAt:
+              type: string
+      poll:
+        type: object
+        properties:
+          id:
+            type: string
+          postId:
+            type: string
+          options:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: string
+                label:
+                  type: string
+                pollId:
+                  type: string
+                votes:
+                  type: array
+          createdAt:
+            type: string
+        nullable: true
+      user:
+        type: object
+        properties:
+          id:
+            type: string
+          username:
+            type: string
+          slug:
+            type: string
+          avatar:
+            type: string
+            nullable: true
+      createdAt:
+        type: string
+  ProfilePreview:
+    type: object
+    properties:
+      id:
+        type: string
+      banner:
+        type: string
+      avatar:
+        type: string
+        nullable: true
+      facebook:
+        type: string
+        nullable: true
+      instagram:
+        type: string
+        nullable: true
+      twitter:
+        type: string
+        nullable: true
+      username:
+        type: string
+      slug:
+        type: string
+      description:
+        type: string
+      subscriptionPrice:
+        type: number
+      profileVideo:
+        type: string
+  Comment:
+    type: object
+    properties:
+      id:
+        type: string
+      content:
+        type: string
+      userId:
+        type: string
+      postId:
+        type: string
+      user:
+        type: object
+        properties:
+          id:
+            type: string
+          username:
+            type: string
+          slug:
+            type: string
+          avatar:
+            type: string
+            nullable: true
+      createdAt:
+        type: string
+  CommentReply:
+    type: object
+    properties:
+      id:
+        type: string
+      content:
+        type: string
+      userId:
+        type: string
+      commentId:
+        type: string
+      user:
+        type: object
+        properties:
+          id:
+            type: string
+          username:
+            type: string
+          slug:
+            type: string
+          avatar:
+            type: string
+            nullable: true
+      likes:
+        type: number
+      createdAt:
+        type: string
